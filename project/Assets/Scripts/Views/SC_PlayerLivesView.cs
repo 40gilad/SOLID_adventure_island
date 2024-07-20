@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class SC_PlayerLivesView : MonoBehaviour
+public class SC_PlayerLivesView : ConcreteUIElementView
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public SC_PlayerLivesView(TextMeshProUGUI txt) : base(txt) { }
 
-    // Update is called once per frame
-    void Update()
+    public override void UIUpdate(int amount)
     {
-        
+        text_element.text = amount.ToString();
     }
 }

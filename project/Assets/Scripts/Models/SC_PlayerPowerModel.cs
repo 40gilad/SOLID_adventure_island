@@ -7,10 +7,4 @@ public class SC_PlayerPowerModel : ConcreteUIElementModel
     {
 
     }
-    protected override void Init(int initial_amount)
-    {
-        if (initial_amount <= 0)
-            throw new ArgumentOutOfRangeException("initial_power");
-        amount = initial_amount;
-    }
 }

@@ -6,11 +6,16 @@ using UnityEngine;
 public abstract class ConcreteUIElementModel
 {
     protected int amount;
-    protected abstract void Init(int initial_amount);
-
     public ConcreteUIElementModel(int initial_amount)
     {
         Init(initial_amount);
+    }
+
+    protected void Init(int initial_amount)
+    {
+        if (initial_amount <= 0)
+            throw new ArgumentOutOfRangeException("initial_power");
+        amount = initial_amount;
     }
     public int Get()
     {

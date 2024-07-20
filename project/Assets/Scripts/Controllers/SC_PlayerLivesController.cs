@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class SC_PlayerLivesController : MonoBehaviour
+public class SC_PlayerLivesController : ConcreteUIElementController
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void Init()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        model = new SC_PlayerLivesModel(initial_amout);
+        view = new SC_PlayerLivesView(GetComponent<TextMeshProUGUI>());
+        view.UIUpdate(model.Get());
     }
 }

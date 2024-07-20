@@ -1,30 +1,11 @@
 using System;
 using UnityEngine;
 
-public class SC_PlayerLivesModel
+public class SC_PlayerLivesModel : ConcreteUIElementModel
 {
-    private int power;
-
-    public SC_PlayerLivesModel(int initial_power)
+    public SC_PlayerLivesModel(int initial_amount) : base(initial_amount)
     {
-        if (initial_power <= 0)
-            throw new ArgumentOutOfRangeException("initial_power");
-        this.power = initial_power;
-    }
 
-    public int Get()
-    {
-        return power;
-    }
-
-    public void Inc()
-    {
-        power++;
-    }
-
-    public void Dec()
-    {
-        if (power > 0) power--;
     }
 
 }

@@ -27,29 +27,6 @@ public class SC_PlayerPowerController : ConcreteUIElementController
             view.UIUpdate(model.Get());
         }
     }
-
-
-
-    /*
-    public void OnLifeLost()
-    {
-        try
-        {
-            model.DecreaseLives();
-            view.UpdateLivesDisplay(model.GetLives());
-        }
-        catch (InvalidOperationException e)
-        {
-            Debug.LogError(e.Message);
-        }
-    }
-
-    public void OnLifeGained()
-    {
-        model.IncreaseLives();
-        view.UpdateLivesDisplay(model.GetLives());
-    }
-    */
 }
 
 
