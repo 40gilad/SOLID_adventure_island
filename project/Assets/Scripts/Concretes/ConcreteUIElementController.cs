@@ -12,9 +12,12 @@ public abstract class ConcreteUIElementController : MonoBehaviour
 
     void Start()
     {
+
         Init();
     }
 
     protected abstract void Init();
+
+    public abstract void OnCollect(int effect);
 
 }

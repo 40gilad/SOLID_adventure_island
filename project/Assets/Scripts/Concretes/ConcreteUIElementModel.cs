@@ -22,13 +22,13 @@ public abstract class ConcreteUIElementModel
         return amount;
     }
 
-    public void Inc()
+    public void Inc(int a=1)
     {
-        amount++;
+        amount+=a;
     }
 
-    public void Dec()
+    public void Dec(int a = 1)
     {
-        if (amount > 0) amount--;
+        if (amount > 0) amount-=a;
     }
 }

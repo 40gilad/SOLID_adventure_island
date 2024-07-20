@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class SC_PlayerLivesController : ConcreteUIElementController
 {
+    public override void OnCollect(int effect)
+    {
+        throw new System.NotImplementedException();
+    }
+
     protected override void Init()
     {
         model = new SC_PlayerLivesModel(initial_amout);
