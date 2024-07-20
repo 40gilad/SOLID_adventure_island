@@ -225,46 +225,16 @@ GameObject:
   m_Component:
   - component: {fileID: 636133115}
   - component: {fileID: 636133114}
-  - component: {fileID: 636133113}
-  - component: {fileID: 636133112}
   - component: {fileID: 636133117}
   - component: {fileID: 636133118}
+  - component: {fileID: 636133119}
   m_Layer: 0
   m_Name: Sprite_Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &636133112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636133111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff273206ff6f4b048b82dcd4198b081d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
---- !u!114 &636133113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636133111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a944f776b9c97504492688ae404717c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boomerangPrefab: {fileID: 7791888006957751867, guid: e72aec0226c0e434180abb010916fe2c, type: 3}
-  attackPoint: {fileID: 636133115}
-  attackForce: 10
 --- !u!212 &636133114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -404,7 +374,38 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &636133119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636133111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b50e0af80d81545a6b762881924d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jump_speed: 200
+--- !u!1 &1524088491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2444180004693991349, guid: 3114dd0deb809134a8971ff9a5e1e6de, type: 3}
+  m_PrefabInstance: {fileID: 3212212600083012567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1524088495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524088491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292246a57d2836b40ba1f5c8392771d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1823750416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -517,7 +518,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2444180004693991349, guid: 3114dd0deb809134a8971ff9a5e1e6de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1524088495}
   m_SourcePrefab: {fileID: 100100000, guid: 3114dd0deb809134a8971ff9a5e1e6de, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
