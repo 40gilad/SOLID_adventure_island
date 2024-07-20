@@ -3,20 +3,15 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SC_PlayerPowerView
+public class SC_PlayerPowerView : ConcreteUIElementView
 {
-    public TextMeshProUGUI powerUI;
+    public SC_PlayerPowerView(TextMeshProUGUI txt) : base(txt) { }
 
-    public SC_PlayerPowerView(TextMeshProUGUI txt)
-    {
-        powerUI = txt;
-    }
-
-    public void Update(int power)
+    public override void UIUpdate(int amount)
     {
         string _power = string.Empty;
-        for (int i = 0; i < power; i++)
+        for (int i = 0; i < amount; i++)
             _power += "I";
-        powerUI.text = _power;
+        text_element.text = _power;
     }
 }

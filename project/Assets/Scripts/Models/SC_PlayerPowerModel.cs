@@ -1,30 +1,16 @@
 using System;
 using UnityEngine;
 
-public class SC_PlayerPowerModel
+public class SC_PlayerPowerModel : ConcreteUIElementModel
 {
-    private int power;
-
-    public SC_PlayerPowerModel(int initial_power)
+    public SC_PlayerPowerModel(int initial_amount) : base(initial_amount)
     {
-        if (initial_power <= 0)
+
+    }
+    protected override void Init(int initial_amount)
+    {
+        if (initial_amount <= 0)
             throw new ArgumentOutOfRangeException("initial_power");
-        this.power = initial_power;
+        amount = initial_amount;
     }
-
-    public int Get()
-    {
-        return power;
-    }
-
-    public void Inc()
-    {
-        power++;
-    }
-
-    public void Dec()
-    {
-        if (power > 0) power--;
-    }
-
 }

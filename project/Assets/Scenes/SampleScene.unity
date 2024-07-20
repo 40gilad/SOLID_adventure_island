@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dbf9f9672626c9468bde7a8e17817e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initial_power: 5
+  initial_amout: 5
   power_decrement_interval: 2
 --- !u!1 &1366870966
 GameObject:

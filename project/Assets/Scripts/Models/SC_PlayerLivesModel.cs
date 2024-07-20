@@ -5,7 +5,7 @@ public class SC_PlayerLivesModel
 {
     private int power;
 
-    public SC_PlayerPowerModel(int initial_power)
+    public SC_PlayerLivesModel(int initial_power)
     {
         if (initial_power <= 0)
             throw new ArgumentOutOfRangeException("initial_power");

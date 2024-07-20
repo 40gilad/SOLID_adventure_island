@@ -3,23 +3,15 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class SC_PlayerPowerController : MonoBehaviour
+public class SC_PlayerPowerController : ConcreteUIElementController
 {
-    public SC_PlayerPowerModel model;
-    public SC_PlayerPowerView view;
-    public int initial_power;
     public int power_decrement_interval;
 
-    void Start()
+    protected override void Init()
     {
-        Init();
-    }
-
-    private void Init()
-    {
-        model = new SC_PlayerPowerModel(initial_power);
+        model = new SC_PlayerPowerModel(initial_amout);
         view = new SC_PlayerPowerView(GetComponent<TextMeshProUGUI>());
-        view.Update(model.Get());
+        view.UIUpdate(model.Get());
 
         if (power_decrement_interval < 1)
             throw new ArgumentOutOfRangeException("power_decrement_interval");
@@ -30,10 +22,12 @@ public class SC_PlayerPowerController : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(power_decrement_interval);
+            model.Get();
             model.Dec();
-            view.Update(model.Get());
+            view.UIUpdate(model.Get());
         }
     }
+
 
 
     /*
