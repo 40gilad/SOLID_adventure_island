@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Concretes;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 
     public class SC_PlayerMovement : ConcreteMovement

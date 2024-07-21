@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public abstract class ConcreteUIElementModel
 {
     protected int amount;
@@ -14,7 +10,7 @@ public abstract class ConcreteUIElementModel
     protected void Init(int initial_amount)
     {
         if (initial_amount <= 0)
-            throw new ArgumentOutOfRangeException("initial_power");
+            throw new ArgumentOutOfRangeException("initial_amount");
         amount = initial_amount;
     }
     public int Get()

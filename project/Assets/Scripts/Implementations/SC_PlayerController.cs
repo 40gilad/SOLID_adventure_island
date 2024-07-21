@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : SC_PlayerMovement
+public class SC_PlayerController : SC_PlayerMovement
 {
 
     private SC_Jump jump;

@@ -10,7 +10,7 @@ public abstract class ConcreteUIElementController : MonoBehaviour
     public ConcreteUIElementView view;
     public int initial_amout;
 
-    void Start()
+    void Awake()
     {
 
         Init();
