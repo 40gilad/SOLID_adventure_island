@@ -18,6 +18,10 @@ public abstract class ConcreteUIElementController : MonoBehaviour
 
     protected abstract void Init();
 
-    public abstract void OnCollect(int effect);
+    public void OnCollect(int effect = 1)
+    {
+        model.Inc(effect);
+        view.UIUpdate(model.Get());
+    }
 
 }

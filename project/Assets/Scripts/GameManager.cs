@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
         ConcreteCollectible pineapple = factories["Fruits"].CreateCollectible("Pineapple");
         pineapple.transform.position = new Vector3(0, 1.5f, 0);
         ConcreteCollectible grape = factories["Fruits"].CreateCollectible("Grape");
-        grape.transform.position = new Vector3(10, 1.5f, 0);
+        grape.transform.position = new Vector3(15, 1.5f, 0);
+        ConcreteCollectible boomerang = factories["Weapons"].CreateCollectible("Boomerang");
+        boomerang.transform.position = new Vector3(10, 1.5f, 0);
 
     }
 
@@ -27,7 +29,8 @@ public class GameManager : MonoBehaviour
 
         factories = new Dictionary<string, Factory>()
         {
-            { "Fruits",new FruitsFactory() }
+            { "Fruits",new FruitsFactory() },
+            { "Weapons",new WeaponsFactory() }
         };
     }
 

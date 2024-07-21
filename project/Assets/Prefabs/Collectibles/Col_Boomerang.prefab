@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 780453357348794048}
   - component: {fileID: 562177402528249750}
-  - component: {fileID: 6185852259304621198}
   - component: {fileID: 8776443637407802965}
+  - component: {fileID: 2860913189187555590}
   m_Layer: 0
-  m_Name: Col_Pineapple
+  m_Name: Col_Boomerang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 90}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d702a8aec23aa614095163032c34cf0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75ab3b196e5912548adfd3e0465e7679, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6185852259304621198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4064188304216951957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba8b868c420100244a98e63148f2394a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UiElementName: TM_Power
-  effect: 2
 --- !u!61 &8776443637407802965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.19, y: 2.5}
+    oldSize: {x: 3.2, y: 3.4}
     newSize: {x: 2.19, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -145,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.19, y: 2.5}
   m_EdgeRadius: 0
+--- !u!114 &2860913189187555590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064188304216951957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7599060312eb17445b938a0f9d05b34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UiElementName: TM_Boomerang

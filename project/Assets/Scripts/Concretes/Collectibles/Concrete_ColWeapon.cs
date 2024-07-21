@@ -1,22 +1,22 @@
 using System;
+using UnityEngine;
 
-public class Concrete_ColFruit : ConcreteCollectible
+public class Concrete_ColWeapon : ConcreteCollectible
 {
-    public int effect;
 
     public override void OnCollect()
     {
         try
         {
-            UiElement.OnCollect(effect);
+            UiElement.OnCollect();
         }
         catch (NullReferenceException)
         {
             Init();
-            UiElement.OnCollect(effect);
+            UiElement.OnCollect();
 
         }
 
-        
+
     }
 }
