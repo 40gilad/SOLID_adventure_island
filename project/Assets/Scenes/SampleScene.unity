@@ -746,6 +746,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UiElementName: TM_Boomerang
+  damage: 1
+  xSpeed: 100
+  ySpeed: 5
+  destroyTime: 5
 --- !u!1 &524897661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +1988,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UiElementName: TM_Hammer
+  damage: 1
+  xSpeed: 100
+  ySpeed: 5
+  destroyTime: 5
 --- !u!1 &1772102738
 GameObject:
   m_ObjectHideFlags: 0

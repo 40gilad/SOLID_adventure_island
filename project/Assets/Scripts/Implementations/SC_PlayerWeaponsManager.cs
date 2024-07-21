@@ -16,8 +16,9 @@ public class SC_PlayerWeaponsManager : MonoBehaviour
 
         if (curr != null)
         {
+
             float direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.x;
-            curr.Shoot();
+            curr.Shoot(direction);
         }
     }
 
