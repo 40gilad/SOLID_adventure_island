@@ -7,7 +7,6 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
     {
 
         public float jump_speed=200;
-        private float direction;
 
         public override void Move()
         {
