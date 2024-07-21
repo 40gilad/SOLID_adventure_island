@@ -13,6 +13,9 @@ public class WeaponsFactory : Factory
             case "Boomerang":
                 prefab = _prefabManager.ColBoomerangPrefab;
                 break;
+            case "Hammer":
+                prefab = _prefabManager.ColHammerPrefab;
+                break;
             default:
                 throw new ArgumentException(type);
         }

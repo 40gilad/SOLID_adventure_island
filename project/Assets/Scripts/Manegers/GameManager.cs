@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
         grape.transform.position = new Vector3(15, 1.5f, 0);
         ConcreteCollectible boomerang = factories["Weapons"].CreateCollectible("Boomerang");
         boomerang.transform.position = new Vector3(10, 1.5f, 0);
+        ConcreteCollectible hammer = factories["Weapons"].CreateCollectible("Hammer");
+        boomerang.transform.position = new Vector3(10, 1.5f, 0);
 
     }
 

@@ -19,8 +19,7 @@ public abstract class ConcreteWeaponController : MonoBehaviour
     {
         model.Shoot(effect);
         UiElement.Dec(effect);
-        int kaka = UiElement.Get();
-        view.UIUpdate(kaka);
+        view.UIUpdate(UiElement.Get());
 
     }
 
