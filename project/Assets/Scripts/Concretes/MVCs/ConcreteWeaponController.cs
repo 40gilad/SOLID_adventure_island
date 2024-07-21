@@ -15,9 +15,9 @@ public abstract class ConcreteWeaponController : MonoBehaviour
         Init();
     }
     
-    public void Shoot(int effect=1)
+    public void Shoot()
     {
-        model.Shoot(effect);
+        int effect = model.Shoot();
         UiElement.Dec(effect);
         view.UIUpdate(UiElement.Get());
 

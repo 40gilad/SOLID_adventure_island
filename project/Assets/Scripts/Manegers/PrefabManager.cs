@@ -20,12 +20,14 @@ public class PrefabManager : MonoBehaviour
 
     #region Weapons
 
-    public GameObject BoomerangWeapon;
+    public GameObject BoomerangWeaponPrefab;
+    public GameObject HammergWeaponPrefab;
 
     #endregion 
 
     private void Awake()
     {
-        PoolManager.Instance.CreatePool(BoomerangWeapon, 5);
+        PoolManager.Instance.CreatePool(BoomerangWeaponPrefab, 5);
+        PoolManager.Instance.CreatePool(HammergWeaponPrefab, 5);
     }
 }

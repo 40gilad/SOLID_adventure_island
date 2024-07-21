@@ -258,7 +258,8 @@ MonoBehaviour:
   ColGrapePrefab: {fileID: 9100225103600732314, guid: a4070fde6029d3048a1f75c1e7e00e72, type: 3}
   ColBoomerangPrefab: {fileID: 4064188304216951957, guid: 68361712921ce1347bfc888fc5b1c789, type: 3}
   ColHammerPrefab: {fileID: 4064188304216951957, guid: cd9087f4a255c3f4599a1f70e10384ab, type: 3}
-  BoomerangWeapon: {fileID: 2622351116122189604, guid: 2804cd56edc81484d86026efdce3c7dd, type: 3}
+  BoomerangWeaponPrefab: {fileID: 2622351116122189604, guid: 2804cd56edc81484d86026efdce3c7dd, type: 3}
+  HammergWeaponPrefab: {fileID: 2622351116122189604, guid: b5bf62541293f7849bea54997783d9f8, type: 3}
 --- !u!1 &181886094
 GameObject:
   m_ObjectHideFlags: 0

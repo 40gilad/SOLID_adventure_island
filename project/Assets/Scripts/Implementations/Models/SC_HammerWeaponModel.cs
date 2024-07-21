@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SC_HammerWeaponModel : ConcreteWeaponModel
 {
-    public override void Shoot(int effect = 1)
+    public SC_HammerWeaponModel()
     {
-        base.Shoot(effect);
-        Debug.Log("Hammer Shoot");
+        prefab_name = "Prefab_HammerWeapon";
     }
 }
