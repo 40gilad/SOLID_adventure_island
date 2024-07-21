@@ -7,7 +7,6 @@ public class ConcreteFloor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("OnCollisionEnter2D " + col.gameObject.name);
         if (col.gameObject.CompareTag("Player"))
             OnFloorCollision?.Invoke();
     }
