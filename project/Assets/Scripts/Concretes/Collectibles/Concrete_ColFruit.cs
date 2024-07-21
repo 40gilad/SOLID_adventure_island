@@ -11,7 +11,7 @@ public class Concrete_ColFruit : ConcreteCollectible
         {
             UiElement.OnCollect(effect);
         }
-        catch (NullReferenceException ex)
+        catch (NullReferenceException)
         {
             Init();
             UiElement.OnCollect(effect);

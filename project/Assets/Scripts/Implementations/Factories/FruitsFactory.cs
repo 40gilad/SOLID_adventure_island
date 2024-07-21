@@ -1,25 +1,20 @@
 using System;
 using UnityEngine;
 
-public class FruitsFactory
+public class FruitsFactory : Factory
 {
-    protected static PrefabManager _prefabManager;
-
-    public static void Initialize(PrefabManager prefabManager)
+    public override ConcreteCollectible CreateCollectible(string type)
     {
-        _prefabManager = prefabManager;
-    }
-    public static Concrete_ColFruit CreateCollectible(string type)
-    {
-        if (_prefabManager == null)
-            throw new InvalidOperationException("GameManager must initilize FruitsFactory first");
-
+        base.CreateCollectible(null); //make sure that factory was initialize
         GameObject prefab = null;
 
         switch (type)
         {
             case "Pineapple":
                 prefab = _prefabManager.ColPineapplePrefab;
+                break;
+            case "Grape":
+                prefab = _prefabManager.ColGrapePrefab;
                 break;
             default:
                 throw new ArgumentException(type);
@@ -28,8 +23,7 @@ public class FruitsFactory
         if (prefab == null)
             throw new ArgumentException("Prefab not found");
 
-        GameObject instance = GameObject.Instantiate(prefab);
-        return instance.GetComponent<Concrete_ColFruit>();
+        return GameObject.Instantiate(prefab).GetComponent<Concrete_ColFruit>();
     }
 }
 
