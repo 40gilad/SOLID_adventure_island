@@ -1989,7 +1989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UiElementName: TM_Hammer
   damage: 1
-  xSpeed: 100
+  xSpeed: 10
   ySpeed: 5
   destroyTime: 5
 --- !u!1 &1772102738
