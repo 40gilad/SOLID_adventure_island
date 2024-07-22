@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6791147125659592099}
   - component: {fileID: 5083897456132301635}
   - component: {fileID: 1392493989073343687}
-  - component: {fileID: 6094254977248996697}
+  - component: {fileID: 7802209499353809603}
   m_Layer: 0
   m_Name: Prefab_RockEnemy
   m_TagString: EnemyPower
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.24, y: 2}
   m_EdgeRadius: 0
---- !u!114 &6094254977248996697
+--- !u!114 &7802209499353809603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,9 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4216082170968968743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63510bdea5661242ad0a265ee659f09, type: 3}
+  m_Script: {fileID: 11500000, guid: 69915a4796183384f84f2fe2689c6058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  touch_damage: 0
-  is_lives_weapon: 0
+  model: {fileID: 0}

@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class SC_EnemyRockController : ConcreteEnemyController
 {
-    protected override void BoomerangCollide()
+    protected override void Init()
     {
-        Debug.Log(System.Reflection.MethodBase.GetCurrentMethod().Name);
-    }
-
-    protected override void HammerCollide()
-    {
-        Debug.Log(System.Reflection.MethodBase.GetCurrentMethod().Name);
-    }
-
-    protected override void PlayerCollide()
-    {
-        Debug.Log(System.Reflection.MethodBase.GetCurrentMethod().Name);
+        model = new SC_EnemyRockModel();
     }
 }
