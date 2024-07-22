@@ -22,17 +22,25 @@ public class SC_PlayerController : SC_PlayerMovement
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("PowerEnemy"))
+        if (other.gameObject.tag.StartsWith("Enemy"))
         {
-            PowerEnemyCollide();
+            if (other.gameObject.CompareTag("EnemyPower"))
+                PowerEnemyCollide();
+            if (other.gameObject.CompareTag("EnemyLives"))
+                LivesEnemyCollide();
         }
     }
 
     private void PowerEnemyCollide()
     {
         Debug.Log("PowerEnemyCollide");
+    }
+
+    private void LivesEnemyCollide()
+    {
+        Debug.Log("LivesEnemyCollide");
     }
 
     private void OnEnable()

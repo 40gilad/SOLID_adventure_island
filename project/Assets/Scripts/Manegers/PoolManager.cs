@@ -54,7 +54,6 @@ public class PoolManager : MonoBehaviour
     public void ReturnObjectToPool(GameObject obj)
     {
         string formatted_obj_name= FormatClonedObjName(obj.name);
-        Debug.Log("Formatted Name= "+formatted_obj_name);
         if (pools.ContainsKey(formatted_obj_name))
             pools[formatted_obj_name].ReturnObject(obj);
         else

@@ -61,6 +61,14 @@ public class ShootingMethods
     {
         Rigidbody2D rb = weapon.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(xSpeed * direction, 0);
-        await Task.Delay((int)(destroyTime * 1000));
+
+        float elapsedTime = 0;
+        while (elapsedTime < destroyTime)
+        {
+            weapon.transform.Rotate(0, 0, 1);
+            elapsedTime += Time.deltaTime;
+            await Task.Yield();
+        }
+
     }
 }

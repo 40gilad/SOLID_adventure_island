@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6791147125659592099}
   - component: {fileID: 5083897456132301635}
   - component: {fileID: 1392493989073343687}
+  - component: {fileID: 6094254977248996697}
   m_Layer: 0
-  m_Name: EnemyDummy
-  m_TagString: Untagged
+  m_Name: Prefab_RockEnemy
+  m_TagString: EnemyPower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 4216082170968968743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4636, y: 3.1205, z: -1}
-  m_LocalScale: {x: 2.608326, y: 2.7105093, z: 1}
+  m_LocalPosition: {x: 0, y: 0.7, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3d1314c43ba53d64ca1f4e0ff485a6c7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 48ec15c08a3db7d4886de14717d6ba0c, type: 3}
+  m_Color: {r: 0.8678953, g: 0.9150943, b: 0.09064613, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.82, y: 2}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 2.24, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -130,3 +131,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.24, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &6094254977248996697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216082170968968743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63510bdea5661242ad0a265ee659f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  touch_damage: 0
+  is_lives_weapon: 0

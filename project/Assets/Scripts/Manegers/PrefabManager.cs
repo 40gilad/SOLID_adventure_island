@@ -23,7 +23,11 @@ public class PrefabManager : MonoBehaviour
     public GameObject BoomerangWeaponPrefab;
     public GameObject HammergWeaponPrefab;
 
-    #endregion 
+    #endregion
+
+    #region Enemies
+    GameObject RockEnemyPrefab;
+    #endregion
 
     private void Awake()
     {
