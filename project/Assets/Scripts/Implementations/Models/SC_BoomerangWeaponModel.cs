@@ -8,9 +8,9 @@ public class SC_BoomerangWeaponModel : ConcreteWeaponModel
         prefab_name = "Prefab_BoomerangWeapon";
     }
 
-    protected override void CustomizeShoot(GameObject weapon, float direction)
+    protected override async Task CustomizeShoot(GameObject weapon, float direction)
     {
-        _ = ShootingMethods.Instance().ShootBoomerang(weapon, direction,xSpeed,destroyTime);
+        await ShootingMethods.Instance().ShootBoomerang(weapon, direction,xSpeed,destroyTime);
 
     }
 

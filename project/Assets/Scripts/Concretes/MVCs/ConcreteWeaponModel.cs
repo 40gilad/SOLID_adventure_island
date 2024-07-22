@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public abstract class ConcreteWeaponModel
     public float ySpeed;
     public float destroyTime;
 
-    public virtual int Shoot(float direction)
+    public virtual async Task<int> ShootAsync(float direction)
     {
         if (string.IsNullOrEmpty(prefab_name))
             throw new NullReferenceException("prefab_name need to initialize in derrived class");
@@ -23,14 +24,15 @@ public abstract class ConcreteWeaponModel
 
         weapon.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
 
-        CustomizeShoot(weapon, direction);
+        await CustomizeShoot(weapon, direction);
+        PoolManager.Instance.ReturnObjectToPool(weapon);
 
         return damage;
     }
 
-    protected virtual void CustomizeShoot(GameObject weapon, float direction)
+    protected virtual async Task CustomizeShoot(GameObject weapon, float direction)
     {
-        ShootingMethods.Instance().ShootBasic(weapon,direction,xSpeed,destroyTime);
+        await ShootingMethods.Instance().ShootBasic(weapon,direction,xSpeed,destroyTime);
     }
 
 }

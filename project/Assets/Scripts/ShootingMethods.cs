@@ -19,11 +19,6 @@ public class ShootingMethods
         return _instance;
     }
 
-    public async Task Shoot(GameObject weapon, float direction, float xSpeed, float destroyTime, Func<GameObject, float, float, float, Task> shootFunction)
-    {
-        await shootFunction(weapon, direction, xSpeed, destroyTime);
-        PoolManager.Instance.ReturnObjectToPool(weapon);
-    }
 
     public async Task ShootBoomerang(GameObject weapon, float direction,
         float xSpeed, float destroyTime)
@@ -58,7 +53,6 @@ public class ShootingMethods
             elapsedTime += Time.deltaTime;
             await Task.Yield();
         }
-        PoolManager.Instance.ReturnObjectToPool(weapon);
 
     }
 
@@ -68,6 +62,5 @@ public class ShootingMethods
         Rigidbody2D rb = weapon.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(xSpeed * direction, 0);
         await Task.Delay((int)(destroyTime * 1000));
-        PoolManager.Instance.ReturnObjectToPool(weapon);
     }
 }

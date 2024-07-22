@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public abstract class ConcreteWeaponController : MonoBehaviour
@@ -18,10 +19,10 @@ public abstract class ConcreteWeaponController : MonoBehaviour
         Init();
     }
 
-    public void Shoot(float direction)
+    public  async void Shoot(float direction)
     {
-        int effect = model.Shoot(direction);
-        UiElement.Dec(effect);
+        int damage = await model.ShootAsync(direction);
+        UiElement.Dec(damage);
         view.UIUpdate(UiElement.Get());
     }
 
