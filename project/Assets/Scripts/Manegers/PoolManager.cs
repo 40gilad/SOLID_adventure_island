@@ -53,9 +53,18 @@ public class PoolManager : MonoBehaviour
 
     public void ReturnObjectToPool(GameObject obj)
     {
-        if (pools.ContainsKey(obj.name))
-            pools[obj.name].ReturnObject(obj);
+        string formatted_obj_name= FormatClonedObjName(obj.name);
+        Debug.Log("Formatted Name= "+formatted_obj_name);
+        if (pools.ContainsKey(formatted_obj_name))
+            pools[formatted_obj_name].ReturnObject(obj);
         else
             Destroy(obj);
+    }
+
+    private string FormatClonedObjName(string obj_name)
+    {
+        if (obj_name.EndsWith("(Clone)"))
+            return obj_name.Substring(0, obj_name.Length -7);
+        return obj_name;
     }
 }

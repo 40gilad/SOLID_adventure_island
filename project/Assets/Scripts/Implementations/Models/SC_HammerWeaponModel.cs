@@ -8,4 +8,9 @@ public class SC_HammerWeaponModel : ConcreteWeaponModel
     {
         prefab_name = "Prefab_HammerWeapon";
     }
+
+    protected override void CustomizeShoot(GameObject weapon, float direction)
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -11,18 +11,25 @@ public abstract class ConcreteWeaponModel
     public float xSpeed;
     public float ySpeed;
     public float destroyTime;
+
     public virtual int Shoot(float direction)
     {
-        if (prefab_name == null)
+        if (string.IsNullOrEmpty(prefab_name))
             throw new NullReferenceException("prefab_name need to initialize in derrived class");
-        GameObject wep = PoolManager.Instance.GetObjectFromPool(prefab_name);
 
-        wep.transform.position = new Vector3(direction, 2, 0);
-        wep.GetComponent<Rigidbody2D>().AddForce(new Vector3(xSpeed * direction, ySpeed, 0));
+        GameObject weapon = PoolManager.Instance.GetObjectFromPool(prefab_name);
+        if (weapon == null)
+            throw new InvalidOperationException("Weapon object could not be retrieved from the pool.");
+
+        weapon.transform.position = new Vector3(direction, 2, 0);
+        weapon.GetComponent<Rigidbody2D>().AddForce(new Vector3(xSpeed * direction, ySpeed, 0));
+
+        CustomizeShoot(weapon, direction);
         Debug.Log(prefab_name+ " Shoot");
 
-        //StartCoroutine(DestroyObject(wep));
         return damage;
     }
+
+    protected abstract void CustomizeShoot(GameObject weapon, float direction);
 
 }
