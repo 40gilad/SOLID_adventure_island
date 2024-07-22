@@ -20,6 +20,8 @@ public class SC_PlayerPowerView : ConcreteUIElementView
 
     private async Task DecPower(int amount,int to_dec)
     {
+
+        Color original = ChangeTextColor(Color.red);
         string _power = string.Empty;
         --amount;
         for (int i = 0;
@@ -31,8 +33,9 @@ public class SC_PlayerPowerView : ConcreteUIElementView
                 _power += "I";
             }
             text_element.text = _power;
-            await Task.Delay(500);
+            await Task.Delay(700);
         }
+        ChangeTextColor(original);
     }
     private async Task UpdatePower(int amount)
     {
@@ -43,5 +46,16 @@ public class SC_PlayerPowerView : ConcreteUIElementView
             text_element.text = _power;
             await Task.Delay(100);
         }
+    }
+
+   private Color ChangeTextColor(Color dest_color)
+    {
+        //returns buttom left gradiant color before changing
+
+        Color original = text_element.colorGradient.bottomLeft;
+        VertexGradient vertexGradient = text_element.colorGradient;
+        vertexGradient.bottomLeft = dest_color;
+        text_element.colorGradient = vertexGradient;
+        return original;
     }
 }
