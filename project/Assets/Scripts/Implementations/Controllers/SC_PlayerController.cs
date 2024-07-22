@@ -8,10 +8,22 @@ public class SC_PlayerController : SC_PlayerMovement
 {
 
     private SC_Jump jump;
+    public string PowerUiElementName;
+    public string LivesUiElementsName;
+    private ConcreteUIElementModel UiPower;
+    private ConcreteUIElementModel UiLives;
+
 
     private void Start()
     {
         jump = new SC_Jump(jump_speed, rigid);
+        ConcreteUIElementController tempController = GameObject.Find(PowerUiElementName).GetComponent<ConcreteUIElementController>();
+        if (tempController != null )
+            UiPower = tempController.model;
+        tempController = GameObject.Find(LivesUiElementsName).GetComponent<ConcreteUIElementController>();
+        if (tempController != null )
+            UiLives = tempController.model;
+
     }
 
     public override void Move()
@@ -26,19 +38,28 @@ public class SC_PlayerController : SC_PlayerMovement
     {
         if (other.gameObject.tag.StartsWith("Enemy"))
         {
-            if (other.gameObject.CompareTag("EnemyPower"))
-                PowerEnemyCollide();
-            if (other.gameObject.CompareTag("EnemyLives"))
-                LivesEnemyCollide();
+            int damage = other.gameObject.GetComponent<ConcreteEnemyController>().damage;
+            string tag = other.gameObject.tag;
+
+            switch (tag) {
+                case "EnemyPower":
+                    PowerEnemyCollide(damage);
+                    break;
+                case "EnemyLives":
+                    LivesEnemyCollide(damage);
+                    break;
+                default: break;
+            }
         }
     }
 
-    private void PowerEnemyCollide()
+    private void PowerEnemyCollide(int damage=1)
     {
-        Debug.Log("PowerEnemyCollide");
+        UiPower.Dec(damage);
+        //Debug.Log("PowerEnemyCollide");
     }
 
-    private void LivesEnemyCollide()
+    private void LivesEnemyCollide(int damage=1)
     {
         Debug.Log("LivesEnemyCollide");
     }
@@ -51,7 +72,6 @@ public class SC_PlayerController : SC_PlayerMovement
     private void OnDisable()
     {
         ConcreteFloor.OnFloorCollision -= HandleFloorCollision;
-
     }
 
     private void HandleFloorCollision()

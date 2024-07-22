@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SC_EnemyRockModel : ConcreteEnemyModel
 {
-    public SC_EnemyRockModel(ConcreteEnemyController c) : base(c) { }
+    public SC_EnemyRockModel(ConcreteEnemyController c,int d) : base(c,d) { }
     protected override void BoomerangCollider()
     {
         Debug.Log(System.Reflection.MethodBase.GetCurrentMethod().Name);

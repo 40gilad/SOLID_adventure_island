@@ -1162,6 +1162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jump_speed: 200
+  PowerUiElementName: TM_Power
+  LivesUiElementsName: TM_Lives
 --- !u!114 &636133120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,6 +1396,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7802209499353809603, guid: 1a76a0c99f33d004aa28708c41eda3b7, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1546,8 +1552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dbf9f9672626c9468bde7a8e17817e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initial_amout: 1
-  power_decrement_interval: 2
+  initial_amout: 10
+  power_decrement_interval: 10
 --- !u!1 &1321540919
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,9 +6,10 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
     public int touch_damage;
     protected ConcreteEnemyController controller;
 
-    protected ConcreteEnemyModel(ConcreteEnemyController _controller)
+    protected ConcreteEnemyModel(ConcreteEnemyController _controller,int damage)
     {
         controller = _controller;
+        touch_damage = damage;
     }
 
     private void Start()

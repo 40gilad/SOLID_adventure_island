@@ -13,4 +13,6 @@ public abstract class ConcreteUIElementView
         text_element = txt;
     }
     public abstract void UIUpdate(int amount);
+    public abstract void UIDec(int amount,int damage);
+
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SC_PlayerHammerModel : ConcreteUIElementModel
 {
-    public SC_PlayerHammerModel(int initial_amount) : base(initial_amount)
+    public SC_PlayerHammerModel(ConcreteUIElementController _controller,
+        int initial_amount) : base(_controller, initial_amount)
     {
 
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SC_PlayerBoomerangModel : ConcreteUIElementModel
 {
-    public SC_PlayerBoomerangModel(int initial_amount) : base(initial_amount)
+    public SC_PlayerBoomerangModel(ConcreteUIElementController _controller,
+        int initial_amount) : base(_controller, initial_amount)
     {
 
     }

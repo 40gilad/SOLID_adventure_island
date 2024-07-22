@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class ConcreteEnemyController: MonoBehaviour
 {
     protected ConcreteEnemyModel model;
+    public int damage;
 
     private void Awake()
     {

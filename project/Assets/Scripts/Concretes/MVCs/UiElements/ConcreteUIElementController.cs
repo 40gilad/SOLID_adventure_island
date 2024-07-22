@@ -20,4 +20,10 @@ public abstract class ConcreteUIElementController : MonoBehaviour
         view.UIUpdate(model.Get());
     }
 
+    public virtual void Dec(int amount,int damage = 1)
+    {
+        //model.Dec(damage);
+        view.UIDec(amount,model.Get());
+    }
+
 }
