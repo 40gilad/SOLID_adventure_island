@@ -21,8 +21,9 @@ public abstract class ConcreteWeaponModel
         if (weapon == null)
             throw new InvalidOperationException("Weapon object could not be retrieved from the pool.");
 
-        weapon.transform.position = new Vector3(direction, 2, 0);
-        weapon.GetComponent<Rigidbody2D>().AddForce(new Vector3(xSpeed * direction, ySpeed, 0));
+        //weapon.transform.position = new Vector3(direction, 2, 0);
+        //weapon.GetComponent<Rigidbody2D>().AddForce(new Vector3(xSpeed * direction, ySpeed, 0));
+        weapon.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
 
         CustomizeShoot(weapon, direction);
         Debug.Log(prefab_name+ " Shoot");
