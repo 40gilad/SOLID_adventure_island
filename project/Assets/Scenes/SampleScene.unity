@@ -1553,7 +1553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initial_amout: 10
-  power_decrement_interval: 30
+  power_decrement_interval: 60
 --- !u!1 &1321540919
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,12 @@ public class SC_PlayerPowerView : ConcreteUIElementView
     private async Task DecPower(int amount,int to_dec)
     {
         string _power = string.Empty;
-        for (int i = 0; i < to_dec-1; i++,--amount,_power = string.Empty) {
+        --amount;
+        for (int i = 0;
+            i < to_dec;
+            i++,--amount)
+        {
+            _power = string.Empty;
             for (int j = 0; j < amount; j++)
             {
                 _power += "I";
@@ -29,7 +34,7 @@ public class SC_PlayerPowerView : ConcreteUIElementView
             text_element.text = _power;
             await Task.Delay(500);
         }
-
+        Debug.Log("Current Power Display: " + _power.Length);
     }
     private async Task UpdatePower(int amount)
     {
