@@ -21,13 +21,13 @@ public class SC_PlayerPowerView : ConcreteUIElementView
     private async Task DecPower(int amount,int to_dec)
     {
         string _power = string.Empty;
-        for (int i = 0; i < (amount- to_dec); i++,--amount) {
-            for (int j = 0; j < i; j++)
+        for (int i = 0; i < to_dec-1; i++,--amount,_power = string.Empty) {
+            for (int j = 0; j < amount; j++)
             {
                 _power += "I";
-                text_element.text = _power;
-                await Task.Delay(100);
             }
+            text_element.text = _power;
+            await Task.Delay(500);
         }
 
     }

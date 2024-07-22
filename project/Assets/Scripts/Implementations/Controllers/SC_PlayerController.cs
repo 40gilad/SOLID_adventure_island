@@ -56,7 +56,6 @@ public class SC_PlayerController : SC_PlayerMovement
     private void PowerEnemyCollide(int damage=1)
     {
         UiPower.Dec(damage);
-        //Debug.Log("PowerEnemyCollide");
     }
 
     private void LivesEnemyCollide(int damage=1)

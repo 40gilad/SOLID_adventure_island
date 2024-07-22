@@ -22,8 +22,7 @@ public abstract class ConcreteUIElementController : MonoBehaviour
 
     public virtual void Dec(int amount,int damage = 1)
     {
-        //model.Dec(damage);
-        view.UIDec(amount,model.Get());
+        view.UIDec(amount,damage);
     }
 
 }
