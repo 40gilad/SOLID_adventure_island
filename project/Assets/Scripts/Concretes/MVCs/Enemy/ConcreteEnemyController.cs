@@ -11,7 +11,6 @@ public abstract class ConcreteEnemyController: MonoBehaviour
     {
         Init();
     }
-
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player") // player collider touch 'my_collider'
@@ -21,4 +20,8 @@ public abstract class ConcreteEnemyController: MonoBehaviour
     }
     protected abstract void Init();
 
+    public void Died()
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SC_EnemyRockModel : ConcreteEnemyModel
 {
+    public SC_EnemyRockModel(ConcreteEnemyController c) : base(c) { }
     protected override void BoomerangCollider()
     {
         Debug.Log(System.Reflection.MethodBase.GetCurrentMethod().Name);
+        controller.Died();
     }
 
     protected override void HammerCollider()

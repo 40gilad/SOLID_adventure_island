@@ -6,6 +6,6 @@ public class SC_EnemyRockController : ConcreteEnemyController
 {
     protected override void Init()
     {
-        model = new SC_EnemyRockModel();
+        model = new SC_EnemyRockModel(this);
     }
 }

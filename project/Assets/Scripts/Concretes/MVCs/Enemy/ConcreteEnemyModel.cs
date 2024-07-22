@@ -1,17 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public abstract class ConcreteEnemyModel : SC_EnemyMovement
 {
     public int touch_damage;
-    public bool is_lives_weapon;
+    protected ConcreteEnemyController controller;
+
+    protected ConcreteEnemyModel(ConcreteEnemyController _controller)
+    {
+        controller = _controller;
+    }
 
     private void Start()
     {
         is_moving = false;
     }
-
+    
     public void WeaponCollider(Collider2D other)
     {
         if (other.gameObject.tag == "WeaponBoomerang")
@@ -19,6 +23,7 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
         else if (other.gameObject.tag == "WeaponHammer")
             HammerCollider();
     }
+
 
     public abstract void PlayerCollider();
 
