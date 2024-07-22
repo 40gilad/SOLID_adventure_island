@@ -22,10 +22,22 @@ public class SC_PlayerController : SC_PlayerMovement
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PowerEnemy"))
+        {
+            PowerEnemyCollide();
+        }
+    }
+
+    private void PowerEnemyCollide()
+    {
+        Debug.Log("PowerEnemyCollide");
+    }
+
     private void OnEnable()
     {
         ConcreteFloor.OnFloorCollision += HandleFloorCollision;
-
     }
 
     private void OnDisable()

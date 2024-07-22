@@ -7,6 +7,7 @@ namespace Assets.Scripts.Concretes
         public float speed = 5;
         protected float direction;
         protected Rigidbody2D rigid;
+        protected bool is_moving = true;
 
         void Awake()
         {
@@ -14,9 +15,13 @@ namespace Assets.Scripts.Concretes
         }
         public void Update()
         {
-            Move();
+            if (is_moving)
+                Move();
         }
 
-        public abstract void Move();
+        public virtual void Move()
+        {
+            Debug.Log("Basic Movement is Nothing");
+        }
     }
 }
