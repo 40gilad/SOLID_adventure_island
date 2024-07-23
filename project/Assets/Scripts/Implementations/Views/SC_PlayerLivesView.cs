@@ -9,7 +9,8 @@ public class SC_PlayerLivesView : ConcreteUIElementView
 
     public override void UIDec(int amount,int damage)
     {
-        throw new System.NotImplementedException();
+        int updated = amount - damage;
+        text_element.text = updated.ToString();
     }
 
     public override void UIUpdate(int amount)

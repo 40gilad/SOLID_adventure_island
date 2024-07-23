@@ -40,7 +40,6 @@ public class SC_PlayerController : SC_PlayerMovement
         {
             int damage = other.gameObject.GetComponent<ConcreteEnemyController>().damage;
             string tag = other.gameObject.tag;
-
             switch (tag) {
                 case "EnemyPower":
                     PowerEnemyCollide(damage);
@@ -50,6 +49,11 @@ public class SC_PlayerController : SC_PlayerMovement
                     break;
                 default: break;
             }
+        }
+        else if (other.gameObject.CompareTag("WeaponFireBall"))
+        {
+            int damage = other.gameObject.GetComponent<ConcreteWeaponController>().damage;
+            UiLives.Dec(damage);
         }
     }
 
