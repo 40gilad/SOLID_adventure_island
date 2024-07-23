@@ -21,6 +21,10 @@ public class SC_EnemyRockModel : ConcreteEnemyModel
 
     public override void PlayerCollider()
     {
-        Debug.Log(System.Reflection.MethodBase.GetCurrentMethod().Name);
+    }
+
+    protected override void FireBallCollider()
+    {
+        Debug.Log("Fireball touch Rock");
     }
 }

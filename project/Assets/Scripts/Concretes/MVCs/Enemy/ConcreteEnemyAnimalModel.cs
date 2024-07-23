@@ -21,6 +21,12 @@ public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
         Debug.Log(this.GetType().Name + " " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         controller.Died();
     }
+
+    protected override void FireBallCollider()
+    {
+        Debug.Log(this.GetType().Name + " " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+        //controller.Died();
+    }
     public override void Move()
     {
         try

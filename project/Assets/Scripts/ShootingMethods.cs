@@ -60,14 +60,21 @@ public class ShootingMethods
     float xSpeed, float destroyTime)
     {
 
-        Debug.Log("SHOOT METHODS: Shoot Basic");
-
+        Rigidbody2D rb = weapon.GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(xSpeed * direction, 0);
+        float elapsedTime = 0f;
+        while (elapsedTime < destroyTime)
+        {
+            elapsedTime += Time.deltaTime;
+            await Task.Yield();
+        }
+        rb.velocity = Vector2.zero;
     }
 
     public async Task ShootHammer(GameObject weapon, float direction,
 float xSpeed, float destroyTime)
     {
-
+        direction = direction * -1;
         Rigidbody2D rb = weapon.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(xSpeed * direction, 0);
 

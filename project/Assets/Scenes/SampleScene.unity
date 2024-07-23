@@ -1396,7 +1396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UiElementName: None
   damage: 1
-  xSpeed: 100
+  xSpeed: 20
   ySpeed: 5
   destroyTime: 5
 --- !u!1001 &803804461
@@ -3264,6 +3264,10 @@ PrefabInstance:
     - target: {fileID: 4216082170968968743, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
       propertyPath: m_TagString
       value: Snake
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773741335891266606, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
+      propertyPath: damage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6791147125659592099, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
       propertyPath: m_LocalPosition.x

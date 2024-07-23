@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 426982544634529746}
   m_Layer: 0
   m_Name: Prefab_FireBallWeapon
-  m_TagString: WeaponBoomerang
+  m_TagString: WeaponFireBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,4 +157,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6

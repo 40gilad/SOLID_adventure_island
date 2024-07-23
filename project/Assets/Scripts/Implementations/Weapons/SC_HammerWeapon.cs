@@ -19,4 +19,5 @@ public class SC_HammerWeapon : ConcreteWeaponController
             view.UIUpdate(UiElement.Get());
         }
     }
+
 }

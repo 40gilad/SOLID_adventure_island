@@ -18,13 +18,14 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
             BoomerangCollider();
         else if (other.gameObject.tag == "WeaponHammer")
             HammerCollider();
+        else if (other.gameObject.tag == "WeaponFireBall")
+            FireBallCollider();
     }
 
 
     public abstract void PlayerCollider();
-
     protected abstract void HammerCollider();
-
     protected abstract void BoomerangCollider();
+    protected abstract void FireBallCollider();
 
 }

@@ -19,7 +19,7 @@ public class SC_FireBallWeapon : ConcreteWeaponController
 
     public override void Shoot(float direction)
     {
-            _ = model.ShootAsync(direction,"Snake");
+        _ = model.ShootAsync(direction,"Snake");
     }
 
 }

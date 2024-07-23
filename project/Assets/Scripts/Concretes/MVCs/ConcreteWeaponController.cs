@@ -31,6 +31,12 @@ public abstract class ConcreteWeaponController : MonoBehaviour
 
     protected virtual void Init()
     {
+
+        model.damage = damage;
+        model.xSpeed = xSpeed;
+        model.ySpeed = ySpeed;
+        model.destroyTime = destroyTime;
+
         ConcreteUIElementController uiElementController = GameObject.Find(UiElementName).GetComponent<ConcreteUIElementController>();
         if (uiElementController != null)
         {
@@ -40,10 +46,6 @@ public abstract class ConcreteWeaponController : MonoBehaviour
         else
             throw new NullReferenceException("UIElementController");
 
-        model.damage = damage;
-        model.xSpeed = xSpeed;
-        model.ySpeed = ySpeed;
-        model.destroyTime = destroyTime;
     }
 
 }
