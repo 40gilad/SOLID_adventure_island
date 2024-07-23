@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class ConcreteEnemyModel : SC_EnemyMovement
@@ -12,10 +11,6 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
         touch_damage = damage;
     }
 
-    private void Start()
-    {
-        is_moving = false;
-    }
     
     public void WeaponCollider(Collider2D other)
     {
@@ -31,4 +26,9 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
     protected abstract void HammerCollider();
 
     protected abstract void BoomerangCollider();
+
+    public override void Move()
+    {
+        Debug.Log("Kaki");
+    }
 }
