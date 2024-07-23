@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SC_EnemyRockModel : ConcreteEnemyModel
 {
-
+    private void Start()
+    {
+        is_moving = false;
+    }
     protected override void BoomerangCollider()
     {
         Debug.Log(System.Reflection.MethodBase.GetCurrentMethod().Name);

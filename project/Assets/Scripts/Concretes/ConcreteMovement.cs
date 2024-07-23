@@ -11,16 +11,13 @@ namespace Assets.Scripts.Concretes
 
         void Awake()
         {
-     
             rigid = GetComponent<Rigidbody2D>();
         }
-        /*
         public void Update()
         {
             if (is_moving)
                 Move();
         }
-        */
 
         public virtual void Move()
         {

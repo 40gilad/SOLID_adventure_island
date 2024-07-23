@@ -27,8 +27,4 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
 
     protected abstract void BoomerangCollider();
 
-    public override void Move()
-    {
-        Debug.Log("Kaki");
-    }
 }
