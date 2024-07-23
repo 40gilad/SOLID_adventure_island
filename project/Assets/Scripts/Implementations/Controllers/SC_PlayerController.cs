@@ -2,6 +2,7 @@ using Assets.Scripts.Implementations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SC_PlayerController : SC_PlayerMovement
@@ -11,10 +12,13 @@ public class SC_PlayerController : SC_PlayerMovement
     private SC_PlayerCollisionManager collider_manager;
     public string PowerUiElementName;
     public string LivesUiElementsName;
+    private SpriteRenderer spriteRenderer;
+    private bool isBlinking = false;
 
     private void Start()
     {
-        ConcreteUIElementModel UiPower=null;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        ConcreteUIElementModel UiPower =null;
         ConcreteUIElementModel UiLives=null;
         jump = new SC_Jump(jump_speed, rigid);
         ConcreteUIElementController tempController = GameObject.Find(PowerUiElementName).GetComponent<ConcreteUIElementController>();
@@ -39,4 +43,40 @@ public class SC_PlayerController : SC_PlayerMovement
         collider_manager.HandleCollision(other);
     }
 
+    private void OnEnable()
+    {
+        SC_PlayerCollisionManager.CoolDownStart += StartCoolDown;
+        SC_PlayerCollisionManager.CoolDownEnd += EndCoolDown;
+    }
+
+
+    private void OnDisable()
+    {
+        SC_PlayerCollisionManager.CoolDownStart -= StartCoolDown;
+        SC_PlayerCollisionManager.CoolDownEnd -= EndCoolDown;
+    }
+
+    private void StartCoolDown()
+    {
+        if (!isBlinking)
+        {
+            isBlinking = true;
+            StartBlinking();
+        }
+    }
+
+    private void EndCoolDown()
+    {
+        isBlinking = false;
+        spriteRenderer.enabled = true;
+    }
+
+    private async void StartBlinking()
+    {
+        while (isBlinking)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            await Task.Delay(100); // Adjust blink interval as needed
+        }
+    }
 }

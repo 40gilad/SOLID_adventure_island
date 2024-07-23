@@ -14,7 +14,7 @@ public class SC_HammerWeapon : ConcreteWeaponController
     {
         if (UiElement.Get() > 0)
         {
-            _ = model.ShootAsync(direction);
+            _ = model.ShootAsync(-direction);
             UiElement.Dec();
             view.UIUpdate(UiElement.Get());
         }
