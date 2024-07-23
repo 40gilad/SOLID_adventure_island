@@ -20,6 +20,7 @@ public class SC_EnemySnakeModel : ConcreteEnemyAnimalModel
 
     public override void Move()
     {
+        base.Move();
         float elapsedTime = Time.time - jumpStartTime;
         if (isJumping)
         {
