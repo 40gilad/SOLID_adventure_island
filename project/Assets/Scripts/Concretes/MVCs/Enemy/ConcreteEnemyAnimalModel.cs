@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
 {
+    protected Transform playerTransform;
 
     public override void PlayerCollider()
     {
@@ -19,9 +21,27 @@ public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
         Debug.Log(this.GetType().Name + " " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         controller.Died();
     }
-
     public override void Move()
     {
-        Debug.Log(this.GetType().Name + " " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+        try
+        {
+            if (playerTransform.position.x > transform.position.x && transform.localScale.x > 0)
+                Flip();
+            else if (playerTransform.position.x < transform.position.x && transform.localScale.x < 0)
+                Flip();
+        }
+        catch (NullReferenceException)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        }
     }
+
+    protected void Flip()
+    {
+        Vector3 scale = transform.localScale;
+        scale.x *= -1; // Flip the x scale to change direction
+        transform.localScale = scale;
+    }
+
 }
