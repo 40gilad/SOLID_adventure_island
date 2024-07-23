@@ -1,6 +1,6 @@
 using System;
-
 using UnityEngine;
+using System.Diagnostics;
 
 public class SC_FireBallWeapon : ConcreteWeaponController
 {
@@ -13,13 +13,14 @@ public class SC_FireBallWeapon : ConcreteWeaponController
         }
         catch (NullReferenceException)
         {
-            Debug.Log("caught exception in fireball");
+            UnityEngine.Debug.Log("caught exception in fireball");
         }
     }
 
-    public override void Shoot(float direction)
+    public void FireShoot(float direction, string name)
     {
-        _ = model.ShootAsync(direction,"Snake");
+        _ = model.ShootAsync(direction:direction,obj_name:name);
     }
+
 
 }

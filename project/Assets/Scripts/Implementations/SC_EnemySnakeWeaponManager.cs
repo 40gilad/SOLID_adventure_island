@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SC_EnemySnakeWeaponManager : MonoBehaviour
 {
-    public ConcreteWeaponController fireball;
+    public SC_FireBallWeapon fireball;
     private float shotInterval = 1.0f;
     private float nextShotTime = 0f;
 
@@ -11,7 +11,7 @@ public class SC_EnemySnakeWeaponManager : MonoBehaviour
         if (Time.time >= nextShotTime)
         {
             float direction = Mathf.Sign(GameObject.FindGameObjectWithTag("Player").transform.position.x - transform.position.x);
-            fireball.Shoot(direction);
+            fireball.FireShoot(direction,name);
             nextShotTime = Time.time + shotInterval;
         }
     }
