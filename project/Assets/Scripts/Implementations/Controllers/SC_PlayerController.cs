@@ -2,6 +2,7 @@ using Assets.Scripts.Implementations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class SC_PlayerController : SC_PlayerMovement
     public string LivesUiElementsName;
     private SpriteRenderer spriteRenderer;
     private bool isBlinking = false;
+    private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
 
     private void Start()
     {
@@ -54,6 +57,8 @@ public class SC_PlayerController : SC_PlayerMovement
     {
         SC_PlayerCollisionManager.CoolDownStart -= StartCoolDown;
         SC_PlayerCollisionManager.CoolDownEnd -= EndCoolDown;
+        cancellationTokenSource.Cancel();
+
     }
 
     private void StartCoolDown()
@@ -61,7 +66,7 @@ public class SC_PlayerController : SC_PlayerMovement
         if (!isBlinking)
         {
             isBlinking = true;
-            StartBlinking();
+            StartBlinking(cancellationTokenSource.Token);
         }
     }
 
@@ -71,12 +76,19 @@ public class SC_PlayerController : SC_PlayerMovement
         spriteRenderer.enabled = true;
     }
 
-    private async void StartBlinking()
+    private async void StartBlinking(CancellationToken token)
     {
         while (isBlinking)
         {
             spriteRenderer.enabled = !spriteRenderer.enabled;
-            await Task.Delay(100); // Adjust blink interval as needed
+            try
+            {
+                await Task.Delay(100, token);
+            }
+            catch (TaskCanceledException)
+            {
+                break; 
+            }
         }
     }
 }
