@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
 {
-    public ConcreteEnemyAnimalModel(ConcreteEnemyController c, int d)
-        : base(c, d) { }
 
     public override void PlayerCollider()
     {
