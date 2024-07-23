@@ -8,14 +8,14 @@ public class SC_PlayerController : SC_PlayerMovement
 {
 
     private SC_Jump jump;
+    private SC_PlayerCollisionManager collider_manager;
     public string PowerUiElementName;
     public string LivesUiElementsName;
-    private ConcreteUIElementModel UiPower;
-    private ConcreteUIElementModel UiLives;
-
 
     private void Start()
     {
+        ConcreteUIElementModel UiPower=null;
+        ConcreteUIElementModel UiLives=null;
         jump = new SC_Jump(jump_speed, rigid);
         ConcreteUIElementController tempController = GameObject.Find(PowerUiElementName).GetComponent<ConcreteUIElementController>();
         if (tempController != null )
@@ -23,7 +23,7 @@ public class SC_PlayerController : SC_PlayerMovement
         tempController = GameObject.Find(LivesUiElementsName).GetComponent<ConcreteUIElementController>();
         if (tempController != null )
             UiLives = tempController.model;
-
+        collider_manager = new SC_PlayerCollisionManager(UiPower, UiLives,jump);
     }
 
     public override void Move()
@@ -36,49 +36,7 @@ public class SC_PlayerController : SC_PlayerMovement
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag.StartsWith("Enemy"))
-        {
-            int damage = other.gameObject.GetComponent<ConcreteEnemyController>().damage;
-            string tag = other.gameObject.tag;
-            switch (tag) {
-                case "EnemyPower":
-                    PowerEnemyCollide(damage);
-                    break;
-                case "EnemyLives":
-                    LivesEnemyCollide(damage);
-                    break;
-                default: break;
-            }
-        }
-        else if (other.gameObject.CompareTag("WeaponFireBall"))
-        {
-            int damage = other.gameObject.GetComponent<ConcreteWeaponController>().damage;
-            UiLives.Dec(damage);
-        }
+        collider_manager.HandleCollision(other);
     }
 
-    private void PowerEnemyCollide(int damage=1)
-    {
-        UiPower.Dec(damage);
-    }
-
-    private void LivesEnemyCollide(int damage=1)
-    {
-        Debug.Log("LivesEnemyCollide");
-    }
-
-    private void OnEnable()
-    {
-        ConcreteFloor.OnFloorCollision += HandleFloorCollision;
-    }
-
-    private void OnDisable()
-    {
-        ConcreteFloor.OnFloorCollision -= HandleFloorCollision;
-    }
-
-    private void HandleFloorCollision()
-    {
-        jump.FloorCollision();
-    }
 }

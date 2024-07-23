@@ -550,6 +550,10 @@ PrefabInstance:
       value: Prefab_EnemySnake (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4216082170968968743, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216082170968968743, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
       propertyPath: m_TagString
       value: Snake
       objectReference: {fileID: 0}
@@ -1933,7 +1937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6791147125659592099, guid: 1a76a0c99f33d004aa28708c41eda3b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.47
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6791147125659592099, guid: 1a76a0c99f33d004aa28708c41eda3b7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3329,6 +3333,10 @@ PrefabInstance:
     - target: {fileID: 4216082170968968743, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
       propertyPath: m_Name
       value: Prefab_EnemySnake
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216082170968968743, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4216082170968968743, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
       propertyPath: m_TagString

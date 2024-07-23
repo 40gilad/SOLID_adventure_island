@@ -29,6 +29,7 @@ public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
     }
     public override void Move()
     {
+        //face to player
         try
         {
             if (playerTransform.position.x > transform.position.x && transform.localScale.x > 0)
