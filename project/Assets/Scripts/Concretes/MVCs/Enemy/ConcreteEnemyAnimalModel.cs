@@ -51,4 +51,5 @@ public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
         transform.localScale = scale;
     }
 
+
 }

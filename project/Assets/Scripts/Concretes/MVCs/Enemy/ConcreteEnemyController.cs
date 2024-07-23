@@ -5,6 +5,7 @@ public abstract class ConcreteEnemyController: MonoBehaviour
     protected ConcreteEnemyModel model;
     public int damage;
 
+
     private void Awake()
     {
         Init();
@@ -18,8 +19,10 @@ public abstract class ConcreteEnemyController: MonoBehaviour
     }
     protected abstract void Init();
 
-    public void Died()
+    public virtual void Died()
     {
         gameObject.SetActive(false);
     }
+
+
 }
