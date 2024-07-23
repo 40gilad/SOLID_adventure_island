@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public abstract class ConcreteWeaponController : MonoBehaviour
@@ -19,11 +18,15 @@ public abstract class ConcreteWeaponController : MonoBehaviour
         Init();
     }
 
-    public  async void Shoot(float direction)
+    public virtual async void Shoot(float direction)
     {
-        int damage = await model.ShootAsync(direction);
-        UiElement.Dec(damage);
-        view.UIUpdate(UiElement.Get());
+        if (UiElement.Get() > 0)
+        {
+            Debug.Log("Base Shoot");
+            int damage = await model.ShootAsync(direction);
+            UiElement.Dec(damage);
+            view.UIUpdate(UiElement.Get());
+        }
     }
 
     protected virtual void Init()
@@ -42,4 +45,5 @@ public abstract class ConcreteWeaponController : MonoBehaviour
         model.ySpeed = ySpeed;
         model.destroyTime = destroyTime;
     }
+
 }

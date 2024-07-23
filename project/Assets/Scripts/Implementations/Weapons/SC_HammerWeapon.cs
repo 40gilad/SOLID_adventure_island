@@ -9,4 +9,14 @@ public class SC_HammerWeapon : ConcreteWeaponController
         model = new SC_HammerWeaponModel();
         base.Init();
     }
+
+    public override void Shoot(float direction)
+    {
+        if (UiElement.Get() > 0)
+        {
+            _ = model.ShootAsync(direction);
+            UiElement.Dec();
+            view.UIUpdate(UiElement.Get());
+        }
+    }
 }

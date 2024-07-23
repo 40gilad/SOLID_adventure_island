@@ -11,4 +11,5 @@ public class SC_PlayerBoomerangController : ConcreteUIElementController
         view = new SC_PlayerBoomerangView(GetComponent<TextMeshProUGUI>());
         view.UIUpdate(model.Get());
     }
+
 }

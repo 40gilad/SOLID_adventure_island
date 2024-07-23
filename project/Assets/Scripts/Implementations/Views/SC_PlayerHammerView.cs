@@ -9,7 +9,7 @@ public class SC_PlayerHammerView : ConcreteUIElementView
 
     public override void UIDec(int amount, int damage)
     {
-        throw new System.NotImplementedException();
+        UIUpdate(amount);
     }
 
     public override void UIUpdate(int amount)
