@@ -1,3 +1,4 @@
+// SC_EnemyFrogModel.cs
 using UnityEngine;
 
 public class SC_EnemyFrogModel : ConcreteEnemyAnimalModel
@@ -20,33 +21,8 @@ public class SC_EnemyFrogModel : ConcreteEnemyAnimalModel
 
     public override void Move()
     {
-        float elapsedTime = Time.time - jumpStartTime;
-        if (isJumping)
-        {
-            if (elapsedTime >= jumpDuration)
-            {
-                isJumping = false;
-                jumpStartTime = Time.time;
-            }
-            else
-            {
-                float normalizedTime = elapsedTime / jumpDuration;
-
-                // Parabolic movement for the jump
-                float newY = startPosition.y + jumpHeight * Mathf.Sin(Mathf.PI * normalizedTime);
-                float newX = startPosition.x - (jumpDistance / jumpDuration) * elapsedTime;
-
-                transform.position = new Vector2(newX, newY);
-            }
-        }
-        else
-        {
-            if (elapsedTime >= jumpDelay)
-            {
-                isJumping = true;
-                jumpStartTime = Time.time;
-                startPosition = transform.position;
-            }
-        }
+        EnemiesMovingMethod.Instance().Frog(ref isJumping, ref jumpStartTime,
+            ref startPosition, transform, jumpDelay, jumpDuration,
+            jumpDistance, jumpHeight, moveSpeed);
     }
 }

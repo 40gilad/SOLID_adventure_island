@@ -29,27 +29,7 @@ public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
     }
     public override void Move()
     {
-        //face to player
-        try
-        {
-            if (playerTransform.position.x > transform.position.x && transform.localScale.x > 0)
-                Flip();
-            else if (playerTransform.position.x < transform.position.x && transform.localScale.x < 0)
-                Flip();
-        }
-        catch (NullReferenceException)
-        {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
-        }
+        EnemiesMovingMethod.Instance().Basic(transform, ref playerTransform);
     }
-
-    protected void Flip()
-    {
-        Vector3 scale = transform.localScale;
-        scale.x *= -1; // Flip the x scale to change direction
-        transform.localScale = scale;
-    }
-
 
 }

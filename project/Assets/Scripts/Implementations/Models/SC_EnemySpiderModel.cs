@@ -13,8 +13,8 @@ public class SC_EnemySpiderModel : ConcreteEnemyAnimalModel
     public override void Move()
     {
         base.Move();
-        float newY = startPosition.y + Mathf.PingPong(Time.time * moveSpeed, moveHeight);
-        transform.position = new Vector2(startPosition.x, newY);
+        EnemiesMovingMethod.Instance().Spider(transform, startPosition, moveSpeed, moveHeight);
+
     }
 
 }

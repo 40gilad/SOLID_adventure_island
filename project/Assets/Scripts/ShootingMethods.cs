@@ -72,7 +72,7 @@ public class ShootingMethods
     }
 
     public async Task ShootHammer(GameObject weapon, float direction,
-float xSpeed, float destroyTime)
+    float xSpeed, float destroyTime)
     {
         direction = direction * -1;
         Rigidbody2D rb = weapon.GetComponent<Rigidbody2D>();
