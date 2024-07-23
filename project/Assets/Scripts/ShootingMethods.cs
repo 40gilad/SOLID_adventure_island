@@ -59,6 +59,15 @@ public class ShootingMethods
     public async Task ShootBasic(GameObject weapon, float direction,
     float xSpeed, float destroyTime)
     {
+
+        Debug.Log("SHOOT METHODS: Shoot Basic");
+
+    }
+
+    public async Task ShootHammer(GameObject weapon, float direction,
+float xSpeed, float destroyTime)
+    {
+
         Rigidbody2D rb = weapon.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(xSpeed * direction, 0);
 

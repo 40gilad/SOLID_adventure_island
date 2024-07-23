@@ -13,7 +13,7 @@ public abstract class ConcreteWeaponModel
     public float ySpeed;
     public float destroyTime;
 
-    public virtual async Task<int> ShootAsync(float direction)
+    public virtual async Task<int> ShootAsync(float direction,string tag="Player")
     {
         if (string.IsNullOrEmpty(prefab_name))
             throw new NullReferenceException("prefab_name need to initialize in derrived class");
@@ -22,7 +22,7 @@ public abstract class ConcreteWeaponModel
         if (weapon == null)
             throw new InvalidOperationException("Weapon object could not be retrieved from the pool.");
 
-        weapon.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+        weapon.transform.position = GameObject.FindGameObjectWithTag(tag).transform.position;
 
         await CustomizeShoot(weapon, direction);
         PoolManager.Instance.ReturnObjectToPool(weapon);

@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SC_HammerWeaponModel : ConcreteWeaponModel
@@ -8,5 +8,9 @@ public class SC_HammerWeaponModel : ConcreteWeaponModel
     {
         prefab_name = "Prefab_HammerWeapon";
     }
+    protected override async Task CustomizeShoot(GameObject weapon, float direction)
+    {
+        await ShootingMethods.Instance().ShootHammer(weapon, direction, xSpeed, destroyTime);
 
+    }
 }
