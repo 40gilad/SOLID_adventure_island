@@ -9,6 +9,8 @@ TagManager:
   - EnemyLives
   - WeaponBoomerang
   - WeaponHammer
+  - Snake
+  - WeaponFireBall
   layers:
   - Default
   - TransparentFX
