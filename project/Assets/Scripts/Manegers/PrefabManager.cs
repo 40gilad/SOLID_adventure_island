@@ -35,6 +35,7 @@ public class PrefabManager : MonoBehaviour
     public GameObject FrogEnemyPrefab;
     public GameObject SpiderEnemyPrefab;
     public GameObject BirdEnemyPrefab;
+    public GameObject GhostEnemyPrefab;
     #endregion
 
     #region FriendsAnimals
