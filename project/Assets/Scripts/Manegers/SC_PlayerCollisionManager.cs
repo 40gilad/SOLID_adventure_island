@@ -13,6 +13,7 @@ public class SC_PlayerCollisionManager
     private float cooldownTime = 2f;
     public static event Action CoolDownStart;
     public static event Action CoolDownEnd;
+    public static event Action<int> GoToStart;
 
 
     public SC_PlayerCollisionManager(ConcreteUIElementModel _UiPower,
@@ -71,7 +72,8 @@ public class SC_PlayerCollisionManager
 
     private void LivesEnemyCollide(int damage = 1)
     {
-        Debug.Log("LivesEnemyCollide");
+        UiLives.Dec(damage);
+        GoToStart?.Invoke(UiLives.Get());
     }
 
     private async Task CollisionCooldown()

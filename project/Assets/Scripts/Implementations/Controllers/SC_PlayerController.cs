@@ -16,6 +16,8 @@ public class SC_PlayerController : SC_PlayerMovement
     private SpriteRenderer spriteRenderer;
     private bool isBlinking = false;
     private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+    private Vector3 initial_position;
+    public static event Action GameOver;
 
 
     private void Start()
@@ -31,6 +33,7 @@ public class SC_PlayerController : SC_PlayerMovement
         if (tempController != null )
             UiLives = tempController.model;
         collider_manager = new SC_PlayerCollisionManager(UiPower, UiLives,jump);
+        initial_position = transform.position;
     }
 
     public override void Move()
@@ -48,6 +51,7 @@ public class SC_PlayerController : SC_PlayerMovement
 
     private void OnEnable()
     {
+        SC_PlayerCollisionManager.GoToStart += GoToStart;
         SC_PlayerCollisionManager.CoolDownStart += StartCoolDown;
         SC_PlayerCollisionManager.CoolDownEnd += EndCoolDown;
     }
@@ -55,6 +59,7 @@ public class SC_PlayerController : SC_PlayerMovement
 
     private void OnDisable()
     {
+        SC_PlayerCollisionManager.GoToStart -= GoToStart;
         SC_PlayerCollisionManager.CoolDownStart -= StartCoolDown;
         SC_PlayerCollisionManager.CoolDownEnd -= EndCoolDown;
         cancellationTokenSource.Cancel();
@@ -90,5 +95,15 @@ public class SC_PlayerController : SC_PlayerMovement
                 break; 
             }
         }
+    }
+
+    private void GoToStart(int lives)
+    {
+        if (lives < 1)
+        {
+            GameOver?.Invoke();
+            return;
+        }
+        transform.position = initial_position;
     }
 }

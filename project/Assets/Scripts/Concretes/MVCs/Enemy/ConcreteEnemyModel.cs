@@ -27,6 +27,10 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
     protected abstract void HammerCollider();
     protected abstract void BoomerangCollider();
     protected abstract void FireBallCollider();
+    public void PlayerFairyCollider()
+    {
+        controller.Died();
+    }
 
     public void WallCollider()
     {

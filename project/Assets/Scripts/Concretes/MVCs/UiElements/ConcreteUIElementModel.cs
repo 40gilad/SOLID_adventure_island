@@ -31,6 +31,6 @@ public abstract class ConcreteUIElementModel
     public void Dec(int damage = 1)
     {
         controller.Dec(amount, damage);
-        if (amount > 0) amount -= damage;
+        if (amount >= 0) amount -= damage;
     }
 }
