@@ -13,6 +13,7 @@ TagManager:
   - WeaponFireBall
   - Wall
   - GameOverPanel
+  - PlayerWeaponFireball
   layers:
   - Default
   - TransparentFX
