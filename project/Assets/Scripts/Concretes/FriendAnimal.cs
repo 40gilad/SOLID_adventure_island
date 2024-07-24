@@ -25,6 +25,16 @@ public abstract class FriendAnimal : MonoBehaviour
         DestroySelf();
     }
 
+    protected virtual void PlayerCollider(Collider2D other)
+    {
+        if (other.tag.StartsWith("Enemy"))
+        {
+            if (other.gameObject.name.StartsWith("Prefab_BonfireEnemy"))
+                DestroySelf();
+        }
+
+    }
+
     protected abstract bool CanBeCollected();
     public abstract void Attack();
     protected abstract void CombineWithPlayer();

@@ -25,4 +25,8 @@ public class SC_EnemyRockModel : ConcreteEnemyModel
     {
         Debug.Log("Fireball touch Rock");
     }
+
+    protected override void PlayerFriendEnemyCollider()
+    {
+    }
 }

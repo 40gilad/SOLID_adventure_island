@@ -23,6 +23,10 @@ public class SC_EnemyBonefireModel : ConcreteEnemyModel
 
     protected override void FireBallCollider()
     {
-        Debug.Log("Fireball touch Bonfire");
+    }
+
+    protected override void PlayerFriendEnemyCollider()
+    {
+        controller.Died();
     }
 }

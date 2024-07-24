@@ -35,4 +35,9 @@ public class FairyFriendAnimal : FriendAnimal
     {
         Debug.Log("Player is now riding Fairy Animal");
     }
+
+    protected override void PlayerCollider(Collider2D other)
+    {//nothing kills fairy
+    }
+
 }

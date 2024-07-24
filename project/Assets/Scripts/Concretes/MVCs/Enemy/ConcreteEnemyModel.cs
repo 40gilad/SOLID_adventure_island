@@ -25,7 +25,16 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
 
     public virtual void PlayerCollider(Collider2D other)
     {
-        string friend_anamy_color= other.GetComponent<SC_PlayerWeaponsManager>().GetFriendAnimal();
+        string friend_enemy_color= other.GetComponent<SC_PlayerWeaponsManager>().
+            GetFriendAnimal();
+        if (friend_enemy_color != null)
+        {//one of the FriendsAnimal
+            if (friend_enemy_color == "Fairy")
+                PlayerFairyCollider();
+            else
+                PlayerFriendEnemyCollider();
+        }
+
     }
     protected abstract void HammerCollider();
     protected abstract void BoomerangCollider();
@@ -34,6 +43,8 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
     {
         controller.Died();
     }
+
+    protected abstract void PlayerFriendEnemyCollider();
 
     public void WallCollider()
     {
