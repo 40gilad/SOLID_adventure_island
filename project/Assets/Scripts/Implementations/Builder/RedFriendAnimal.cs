@@ -9,9 +9,9 @@ public class RedFriendAnimal : FriendAnimal
         return true;
     }
 
-    protected override void Attack()
+    public override void Attack()
     {
-        Debug.Log("Blue Animal attacks with tail");
+        Debug.Log("Red Animal shoot fire");
     }
 
     protected override void CombineWithPlayer()

@@ -9,7 +9,7 @@ public class BlueFriendAnimal : FriendAnimal
         return true;
     }
 
-    protected override void Attack()
+    public override void Attack()
     {
         Debug.Log("Blue Animal attacks with tail");
     }

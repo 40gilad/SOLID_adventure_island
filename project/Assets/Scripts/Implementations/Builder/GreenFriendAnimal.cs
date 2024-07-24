@@ -9,9 +9,9 @@ public class GreenFriendAnimal : FriendAnimal
         return true;
     }
 
-    protected override void Attack()
+    public override void Attack()
     {
-        Debug.Log("Blue Animal attacks with tail");
+        Debug.Log("Green Animal attacks with turn");
     }
 
     protected override void CombineWithPlayer()
