@@ -17,7 +17,7 @@ public class SC_EnemyRockModel : ConcreteEnemyModel
     {
     }
 
-    public override void PlayerCollider()
+    public override void PlayerCollider(Collider2D other)
     {
     }
 

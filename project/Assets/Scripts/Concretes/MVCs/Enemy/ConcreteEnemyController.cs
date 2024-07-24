@@ -10,10 +10,11 @@ public abstract class ConcreteEnemyController: MonoBehaviour
     {
         Init();
     }
+
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player") // check if has fairy or animal. if animal, bonefire. fairy- everthing
-            model.PlayerCollider();
+        if (other.gameObject.tag == "Player")
+            model.PlayerCollider(other);
         else if (other.gameObject.tag.StartsWith("Weapon"))
             model.WeaponCollider(other);
         if (other.CompareTag("Wall"))

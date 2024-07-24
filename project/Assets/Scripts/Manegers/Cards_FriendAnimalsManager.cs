@@ -16,7 +16,7 @@ public class Cards_FriendsAnimalsManaeger : MonoBehaviour
         {
             {"Red", "Prefab_RedDino"},
             {"Blue", "Prefab_BlueDino"},
-            {"Green", "Prefab_GreenDino"}
+            {"Green", "Prefab_GreenDino"},
         };
         player = GameObject.FindGameObjectWithTag("Player");
         player_weapon_manager = player.GetComponent<SC_PlayerWeaponsManager>();

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SC_PlayerWeaponsManager : MonoBehaviour
@@ -23,8 +24,16 @@ public class SC_PlayerWeaponsManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.G)
             && !string.IsNullOrEmpty(friendAnimal_color))
         {
-            transform.Find("Prefab_" + friendAnimal_color + "Dino(Clone)")
-                .GetComponent<FriendAnimal>().Attack();
+            try
+            {
+                transform.Find("Prefab_" + friendAnimal_color + "Dino(Clone)")
+                    .GetComponent<FriendAnimal>().Attack();
+            }
+            catch (NullReferenceException)
+            {
+                transform.Find("Prefab_" + friendAnimal_color + "(Clone)")
+                    .GetComponent<FriendAnimal>().Attack();
+            }
         }
 
         if (curr != null)
@@ -35,9 +44,13 @@ public class SC_PlayerWeaponsManager : MonoBehaviour
         }
     }
 
-
     public void SetFriendAnimalColor(string color)
     {
         friendAnimal_color = color;
+    }
+
+    public string GetFriendAnimal()
+    {
+        return friendAnimal_color;
     }
 }

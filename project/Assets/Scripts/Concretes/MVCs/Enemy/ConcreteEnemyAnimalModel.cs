@@ -5,7 +5,7 @@ public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
 {
     protected Transform playerTransform;
 
-    public override void PlayerCollider()
+    public override void PlayerCollider(Collider2D other)
     {
         Debug.Log("Player touch animal. player lives dec");
     }
