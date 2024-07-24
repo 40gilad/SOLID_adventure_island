@@ -52,7 +52,7 @@ public class PrefabManager : MonoBehaviour
     #endregion
     private void Awake()
     {
-        //PoolManager.Instance.CreatePool(Eggprefab, 2);
+        PoolManager.Instance.CreatePool(Eggprefab, 2);
 
         PoolManager.Instance.CreatePool(ColBoomerangPrefab, 3);
         PoolManager.Instance.CreatePool(ColHammerPrefab, 3);
@@ -64,7 +64,7 @@ public class PrefabManager : MonoBehaviour
         PoolManager.Instance.CreatePool(RedFriendAnimalprefab, 1);
         PoolManager.Instance.CreatePool(BlueFriendAnimalprefab, 1);
         PoolManager.Instance.CreatePool(GreenFriendAnimalprefab, 1);
-        //PoolManager.Instance.CreatePool(Fairyprefab, 1);
+        PoolManager.Instance.CreatePool(Fairyprefab, 1);
         
 
         PoolManager.Instance.CreatePool(LeafCardPrefab, 1);

@@ -11,7 +11,8 @@ public class PrefabList
             "Col_Hammer",
             "Prefab_HeartCard",
             "Prefab_LeafCard",
-            "Prefab_StarCard"
+            "Prefab_StarCard",
+            "Prefab_Fairy"
         };
     }
 
