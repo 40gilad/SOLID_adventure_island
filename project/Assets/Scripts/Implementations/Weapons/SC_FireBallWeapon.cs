@@ -13,7 +13,6 @@ public class SC_FireBallWeapon : ConcreteWeaponController
         }
         catch (NullReferenceException)
         {
-            UnityEngine.Debug.Log("caught exception in fireball");
         }
     }
 
