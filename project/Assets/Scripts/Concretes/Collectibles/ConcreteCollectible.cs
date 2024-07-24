@@ -20,7 +20,6 @@ public abstract class ConcreteCollectible : MonoBehaviour, ICollectible
     {
         if (other.gameObject.CompareTag("Player"))
         { // player collider touch 'my_collider'
-            Destroy(gameObject);
             OnCollect();
         }
     }

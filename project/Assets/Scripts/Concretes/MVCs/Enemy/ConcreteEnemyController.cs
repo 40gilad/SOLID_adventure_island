@@ -23,9 +23,18 @@ public abstract class ConcreteEnemyController: MonoBehaviour
 
     protected abstract void Init();
 
-    public virtual void Died()
+    public virtual void Died(bool is_wall=false)
     {
+        if (!is_wall)
+            LayEgg();
         gameObject.SetActive(false);
+    }
+
+    private void LayEgg()
+    {
+        GameObject egg =PoolManager.Instance.GetObjectFromPool("Prefab_Egg");
+        egg.SetActive(true);
+        egg.transform.position = new Vector3(this.transform.position.x, 0.9f, -1f);
     }
 
 

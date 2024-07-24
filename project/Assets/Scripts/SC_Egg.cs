@@ -32,6 +32,7 @@ public class SC_Egg : MonoBehaviour
     private GameObject RandomCharacter()
     {
         string suprise_prefab = PrefabList.Instance().Get(random.Next(PrefabList.Instance().Amount()));
+        Debug.Log("SC_Egg RandomCharacter: " + suprise_prefab);
         return PoolManager.Instance.GetObjectFromPool(suprise_prefab);
     }
 }

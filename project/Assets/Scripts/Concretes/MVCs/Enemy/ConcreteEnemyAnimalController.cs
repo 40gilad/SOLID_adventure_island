@@ -9,11 +9,10 @@ public abstract class ConcreteEnemyAnimalController : ConcreteEnemyController
     {
         initial_position = transform.position;
     }
-    public override void Died()
+    public override void Died(bool is_wall=false)
     {
-        gameObject.SetActive(false);
+        base.Died(is_wall);
         Invoke("BackToLife", revival_time);
-        //lay eggs sometimes
     }
 
     private void BackToLife()

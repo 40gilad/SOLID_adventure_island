@@ -8,11 +8,12 @@ public class PrefabList
     {
         prefab_list = new List<string> {
             "Col_Boomerang",
-            "Col_Hammer",
+            "Col_Hammer" /*,
             "Prefab_HeartCard",
             "Prefab_LeafCard",
             "Prefab_StarCard",
             "Prefab_Fairy"
+            */
         };
     }
 

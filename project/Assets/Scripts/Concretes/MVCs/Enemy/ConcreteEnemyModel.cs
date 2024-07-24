@@ -30,7 +30,7 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
 
     public void WallCollider()
     {
-        controller.Died();
+        controller.Died(is_wall:true);
     }
 
 }
