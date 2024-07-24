@@ -6,6 +6,7 @@ public abstract class FriendAnimal : MonoBehaviour
     protected bool isCollected = false;
     protected SC_PlayerWeaponsManager player_weapon_manager;
 
+
     void Awake()
     {
         Invoke("DestroySelf", destroyTime);
@@ -35,7 +36,6 @@ public abstract class FriendAnimal : MonoBehaviour
 
     }
 
-    protected abstract bool CanBeCollected();
     public abstract void Attack();
     protected abstract void CombineWithPlayer();
 }

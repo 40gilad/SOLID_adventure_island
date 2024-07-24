@@ -20,11 +20,6 @@ public class FairyFriendAnimal : FriendAnimal
         player_weapon_manager.SetFriendAnimalColor(string.Empty);
 
     }
-    protected override bool CanBeCollected()
-    {
-        Debug.Log("FairyFriendAnimal CanBeCollected? retuens true");
-        return true;
-    }
 
     public override void Attack()
     {

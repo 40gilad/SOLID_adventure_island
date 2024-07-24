@@ -3,11 +3,6 @@ using UnityEngine;
 public class BlueFriendAnimal : FriendAnimal
 {
 
-    protected override bool CanBeCollected()
-    {
-        Debug.Log("BlueFriendAnimal CanBeCollected? retuens true");
-        return true;
-    }
 
     public override void Attack()
     {

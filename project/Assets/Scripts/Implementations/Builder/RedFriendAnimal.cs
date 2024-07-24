@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class RedFriendAnimal : FriendAnimal
 {
+    private SC_PlayerFireBallWeapon fireball_weapon;
 
-    protected override bool CanBeCollected()
+
+    private void Start()
     {
-        Debug.Log("RedFriendAnimal CanBeCollected? retuens true");
-        return true;
+        fireball_weapon = GameObject.Find("SC_PlayerFireBallWeapon").GetComponent<SC_PlayerFireBallWeapon>();
     }
-
     public override void Attack()
     {
-        Debug.Log("Red Animal shoot fire");
+        float direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.x;
+        fireball_weapon.FireShoot(direction,name);
     }
 
     protected override void CombineWithPlayer()
     {
-        Debug.Log("Player is now riding Blue Animal");
     }
 }

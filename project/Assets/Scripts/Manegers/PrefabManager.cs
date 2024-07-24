@@ -26,6 +26,7 @@ public class PrefabManager : MonoBehaviour
     public GameObject BoomerangWeaponPrefab;
     public GameObject HammergWeaponPrefab;
     public GameObject FireBallWeaponPrefab;
+    public GameObject PlayerFireBallWeaponPrefab;
 
     #endregion
 
@@ -61,6 +62,7 @@ public class PrefabManager : MonoBehaviour
         PoolManager.Instance.CreatePool(BoomerangWeaponPrefab, 5);
         PoolManager.Instance.CreatePool(HammergWeaponPrefab, 5);
         PoolManager.Instance.CreatePool(FireBallWeaponPrefab, 5);
+        PoolManager.Instance.CreatePool(PlayerFireBallWeaponPrefab, 5);
 
         PoolManager.Instance.CreatePool(RedFriendAnimalprefab, 1);
         PoolManager.Instance.CreatePool(BlueFriendAnimalprefab, 1);

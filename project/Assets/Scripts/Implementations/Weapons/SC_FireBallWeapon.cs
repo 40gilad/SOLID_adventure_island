@@ -21,5 +21,4 @@ public class SC_FireBallWeapon : ConcreteWeaponController
         _ = model.ShootAsync(direction:direction,obj_name:name);
     }
 
-
 }
