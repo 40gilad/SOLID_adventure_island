@@ -13,7 +13,6 @@ public class Concrete_ColCard : ConcreteCollectible
     }
     public override void OnCollect()
     {
-        Debug.Log("Animal " + animal_color);
         cards_manager.SetAnimal(animal_color);
     }
 }

@@ -7,17 +7,6 @@ public class SC_PlayerWeaponsManager : MonoBehaviour
     private ConcreteWeaponController curr;
     private string friendAnimal_color;
 
-
-
-    private void OnEnable()
-    {
-        Cards_FriendsAnimalsManaeger.FriendAnimalOnCollect += OnFriendAnimalCollect;
-    }
-
-    private void OnDisable()
-    {
-        Cards_FriendsAnimalsManaeger.FriendAnimalOnCollect -= OnFriendAnimalCollect;
-    }
     void Update()
     {
         curr = null;
@@ -46,24 +35,6 @@ public class SC_PlayerWeaponsManager : MonoBehaviour
         }
     }
 
-    private void OnFriendAnimalCollect(string color=null)
-    {
-        if (!string.IsNullOrEmpty(color))
-        {
-            if (!string.IsNullOrEmpty(friendAnimal_color))
-            {// colected friendAnimal while other friendAnimal is active
-                Debug.Log("Impelement switch animals");
-            }
-            else
-            {
-                friendAnimal_color = color;
-            }
-
-        }
-        else //animal turned off
-            friendAnimal_color = null;
-
-    }
 
     public void SetFriendAnimalColor(string color)
     {

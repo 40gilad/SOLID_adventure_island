@@ -5,9 +5,9 @@ using UnityEngine;
 public class Cards_FriendsAnimalsManaeger : MonoBehaviour
 {
     private Dictionary<string, string> color_prefab_name_dict;
-    public static event Action<string> FriendAnimalOnCollect;
     private SC_PlayerWeaponsManager player_weapon_manager;
     GameObject player;
+    GameObject curr_active_animal;
 
 
     private void Init()
@@ -29,15 +29,21 @@ public class Cards_FriendsAnimalsManaeger : MonoBehaviour
         string prefab_name = GetPrefabName(color);
         if (prefab_name == null)
             throw new ArgumentException(color);
+        SwitchAnimals();
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        GameObject curr = PoolManager.Instance.GetObjectFromPool(prefab_name);
-        curr.transform.SetParent(player.transform, false);
-        curr.transform.localPosition = new Vector3(0.2f, -0.7f,1f);
-
+        curr_active_animal = PoolManager.Instance.GetObjectFromPool(prefab_name);
+        curr_active_animal.transform.SetParent(player.transform, false);
+        curr_active_animal.transform.localPosition = new Vector3(0.2f, -0.7f,1f);
         player_weapon_manager.SetFriendAnimalColor(color);
 
 
+    }
+
+    private void SwitchAnimals()
+    {
+        if (curr_active_animal == null)
+            return;
+        curr_active_animal.GetComponent<FriendAnimal>().GoToSleep();
     }
 
     public string GetPrefabName(string color)

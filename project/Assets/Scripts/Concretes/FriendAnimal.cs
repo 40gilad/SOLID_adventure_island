@@ -20,6 +20,10 @@ public abstract class FriendAnimal : MonoBehaviour
         player_weapon_manager.SetFriendAnimalColor(string.Empty);
     }
 
+    public void GoToSleep()
+    {
+        DestroySelf();
+    }
 
     protected abstract bool CanBeCollected();
     public abstract void Attack();
