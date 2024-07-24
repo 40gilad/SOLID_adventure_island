@@ -13,6 +13,7 @@ public class Concrete_ColCard : ConcreteCollectible
     }
     public override void OnCollect()
     {
+        PoolManager.Instance.ReturnObjectToPool(this.gameObject);
         cards_manager.SetAnimal(animal_color);
     }
 }

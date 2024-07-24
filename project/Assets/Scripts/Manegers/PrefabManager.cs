@@ -15,6 +15,9 @@ public class PrefabManager : MonoBehaviour
             public GameObject ColHammerPrefab;
 
     #endregion
+    public GameObject Eggprefab;
+
+
 
     #endregion
 
@@ -38,6 +41,7 @@ public class PrefabManager : MonoBehaviour
     public GameObject RedFriendAnimalprefab;
     public GameObject BlueFriendAnimalprefab;
     public GameObject GreenFriendAnimalprefab;
+    public GameObject Fairyprefab;
     #endregion
 
     #region Cards
@@ -48,12 +52,23 @@ public class PrefabManager : MonoBehaviour
     #endregion
     private void Awake()
     {
+        //PoolManager.Instance.CreatePool(Eggprefab, 2);
+
+        PoolManager.Instance.CreatePool(ColBoomerangPrefab, 3);
+        PoolManager.Instance.CreatePool(ColHammerPrefab, 3);
+
         PoolManager.Instance.CreatePool(BoomerangWeaponPrefab, 5);
         PoolManager.Instance.CreatePool(HammergWeaponPrefab, 5);
         PoolManager.Instance.CreatePool(FireBallWeaponPrefab, 5);
-        PoolManager.Instance.CreatePool(FireBallWeaponPrefab, 5);
+
         PoolManager.Instance.CreatePool(RedFriendAnimalprefab, 1);
         PoolManager.Instance.CreatePool(BlueFriendAnimalprefab, 1);
         PoolManager.Instance.CreatePool(GreenFriendAnimalprefab, 1);
+        //PoolManager.Instance.CreatePool(Fairyprefab, 1);
+        
+
+        PoolManager.Instance.CreatePool(LeafCardPrefab, 1);
+        PoolManager.Instance.CreatePool(StarCardPrefab, 1);
+        PoolManager.Instance.CreatePool(HeartCardPrefab, 1);
     }
 }
