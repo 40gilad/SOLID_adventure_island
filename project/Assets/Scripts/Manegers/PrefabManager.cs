@@ -34,10 +34,25 @@ public class PrefabManager : MonoBehaviour
     public GameObject BirdEnemyPrefab;
     #endregion
 
+    #region FriendsAnimals
+    public GameObject animal_dummy_prefab;
+    public GameObject RedFriendAnimalprefab;
+    public GameObject BlueFriendAnimalprefab;
+    public GameObject GreenFriendAnimalprefab;
+    #endregion
+
+    #region Cards
+    public GameObject LeafCardPrefab;
+    public GameObject StarCardPrefab;
+    public GameObject HeartCardPrefab;
+
+    #endregion
     private void Awake()
     {
         PoolManager.Instance.CreatePool(BoomerangWeaponPrefab, 5);
         PoolManager.Instance.CreatePool(HammergWeaponPrefab, 5);
         PoolManager.Instance.CreatePool(FireBallWeaponPrefab, 5);
+        PoolManager.Instance.CreatePool(FireBallWeaponPrefab, 5);
+        PoolManager.Instance.CreatePool(animal_dummy_prefab, 1);
     }
 }

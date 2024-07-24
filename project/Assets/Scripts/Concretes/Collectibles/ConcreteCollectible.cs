@@ -10,7 +10,7 @@ public abstract class ConcreteCollectible : MonoBehaviour, ICollectible
         Init();
     }
 
-    protected void Init()
+    protected virtual void Init()
     {
         UiElement = GameObject.Find(UiElementName).GetComponent<ConcreteUIElementController>();
     }
@@ -24,4 +24,6 @@ public abstract class ConcreteCollectible : MonoBehaviour, ICollectible
             OnCollect();
         }
     }
+
+
 }
