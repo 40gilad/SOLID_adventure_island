@@ -99,7 +99,7 @@ public class SC_PlayerController : SC_PlayerMovement
 
     private void GoToStart(int lives)
     {
-        if (lives < 1)
+        if (lives < 0)
         {
             GameOver?.Invoke();
             return;
