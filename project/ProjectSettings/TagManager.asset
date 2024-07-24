@@ -12,6 +12,7 @@ TagManager:
   - Snake
   - WeaponFireBall
   - Wall
+  - GameOverPanel
   layers:
   - Default
   - TransparentFX
