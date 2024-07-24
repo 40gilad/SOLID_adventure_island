@@ -11,6 +11,7 @@ TagManager:
   - WeaponHammer
   - Snake
   - WeaponFireBall
+  - Wall
   layers:
   - Default
   - TransparentFX
