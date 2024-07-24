@@ -16,7 +16,11 @@ public abstract class ConcreteEnemyController: MonoBehaviour
             model.PlayerCollider();
         else if (other.gameObject.tag.StartsWith("Weapon"))
             model.WeaponCollider(other);
+        if (other.CompareTag("Wall"))
+            model.WallCollider();
+
     }
+
     protected abstract void Init();
 
     public virtual void Died()
