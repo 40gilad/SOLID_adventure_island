@@ -1,7 +1,5 @@
 public interface IFriendAnimalBuilder
-{
-    void SetColor();
-    void SetCollectible();
+{    void SetCollectible();
     void SetAttackBehavior();
     FriendAnimal GetAnimal();
 }

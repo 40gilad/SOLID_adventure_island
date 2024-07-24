@@ -35,7 +35,6 @@ public class PrefabManager : MonoBehaviour
     #endregion
 
     #region FriendsAnimals
-    public GameObject animal_dummy_prefab;
     public GameObject RedFriendAnimalprefab;
     public GameObject BlueFriendAnimalprefab;
     public GameObject GreenFriendAnimalprefab;
@@ -53,6 +52,8 @@ public class PrefabManager : MonoBehaviour
         PoolManager.Instance.CreatePool(HammergWeaponPrefab, 5);
         PoolManager.Instance.CreatePool(FireBallWeaponPrefab, 5);
         PoolManager.Instance.CreatePool(FireBallWeaponPrefab, 5);
-        PoolManager.Instance.CreatePool(animal_dummy_prefab, 1);
+        PoolManager.Instance.CreatePool(RedFriendAnimalprefab, 1);
+        PoolManager.Instance.CreatePool(BlueFriendAnimalprefab, 1);
+        PoolManager.Instance.CreatePool(GreenFriendAnimalprefab, 1);
     }
 }

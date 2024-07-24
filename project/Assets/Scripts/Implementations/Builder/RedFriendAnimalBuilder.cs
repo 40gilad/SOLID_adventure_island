@@ -9,10 +9,6 @@ public class RedFriendAnimalBuilder : IFriendAnimalBuilder
         animal = new GameObject("RedAnimal").AddComponent<RedFriendAnimal>();
     }
 
-    public void SetColor()
-    {
-        animal.color = Color.red;
-    }
 
     public void SetCollectible()
     {

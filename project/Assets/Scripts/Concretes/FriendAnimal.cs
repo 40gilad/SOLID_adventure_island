@@ -3,7 +3,6 @@ using UnityEngine;
 public abstract class FriendAnimal : MonoBehaviour
 {
     public float destroyTime = 5.0f;
-    public Color color;
     protected bool isCollected = false;
     protected GameObject player;
 

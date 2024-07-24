@@ -9,7 +9,6 @@ public class FriendsAnimalsDirector
 
     public void Construct()
     {
-        builder.SetColor();
         builder.SetCollectible();
         builder.SetAttackBehavior();
     }

@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class BlueFriendAnimal : FriendAnimal
 {
-    void Start()
-    {
-        color = Color.blue;
-    }
 
     protected override bool CanBeCollected()
     {
