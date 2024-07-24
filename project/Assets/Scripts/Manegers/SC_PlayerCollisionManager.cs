@@ -21,17 +21,15 @@ public class SC_PlayerCollisionManager
         UiLives = _UiLives;
         UiPower = _UiPower;
         jump = _Jump;
-    }
-
-    private void OnEnable()
-    {
         ConcreteFloor.OnFloorCollision += HandleFloorCollision;
+
     }
 
-    private void OnDisable()
+    ~SC_PlayerCollisionManager()
     {
         ConcreteFloor.OnFloorCollision -= HandleFloorCollision;
     }
+
 
     public async void HandleCollision(Collider2D other)
     {

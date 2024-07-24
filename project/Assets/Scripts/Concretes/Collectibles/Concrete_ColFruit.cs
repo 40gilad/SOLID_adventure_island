@@ -17,6 +17,6 @@ public class Concrete_ColFruit : ConcreteCollectible
 
         }
 
-        
+        Destroy(gameObject);
     }
 }

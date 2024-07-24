@@ -4595,6 +4595,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6845006551624838352, guid: 9fc4985fd38a4bc4886a02e596e492c3, type: 3}
+      propertyPath: jump_speed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7231221923195805611, guid: 9fc4985fd38a4bc4886a02e596e492c3, type: 3}
       propertyPath: hammer_weapon
       value: 
