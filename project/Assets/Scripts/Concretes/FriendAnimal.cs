@@ -14,7 +14,7 @@ public abstract class FriendAnimal : MonoBehaviour
 
     void DestroySelf()
     {
-        gameObject.SetActive(false);
+        PoolManager.Instance.ReturnObjectToPool(this.gameObject);
     }
 
     public void Collect(GameObject player)
