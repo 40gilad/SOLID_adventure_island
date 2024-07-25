@@ -32,7 +32,4 @@ public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
         EnemiesMovingMethod.Instance().Basic(transform, ref playerTransform);
     }
 
-    protected override void PlayerFriendEnemyCollider()
-    {
-    }
 }

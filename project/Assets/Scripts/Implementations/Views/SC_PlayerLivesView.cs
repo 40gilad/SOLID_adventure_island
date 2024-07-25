@@ -17,4 +17,5 @@ public class SC_PlayerLivesView : ConcreteUIElementView
     {
         text_element.text = amount.ToString();
     }
+    
 }

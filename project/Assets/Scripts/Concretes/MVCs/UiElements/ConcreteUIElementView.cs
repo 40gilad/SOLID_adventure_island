@@ -15,4 +15,8 @@ public abstract class ConcreteUIElementView
     public abstract void UIUpdate(int amount);
     public abstract void UIDec(int amount,int damage);
 
+    ~ConcreteUIElementView()
+    {
+        text_element = null;
+    }
 }

@@ -32,7 +32,7 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
             if (friend_enemy_color == "Fairy")
                 PlayerFairyCollider();
             else
-                PlayerFriendEnemyCollider();
+                PlayerFriendEnemyCollider(other.GetComponent<SC_PlayerWeaponsManager>().IsAnimalAttacking());
         }
 
     }
@@ -44,7 +44,10 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
         controller.Died();
     }
 
-    protected abstract void PlayerFriendEnemyCollider();
+    protected virtual void PlayerFriendEnemyCollider(bool is_friendAnimal_attacking)
+    {
+        controller.Died();
+    }
 
     public void WallCollider()
     {

@@ -23,14 +23,19 @@ public abstract class ConcreteUIElementModel
         return amount;
     }
 
-    public void Inc(int a=1)
+    public virtual void Inc(int a=1)
     {
         amount+=a;
     }
 
-    public void Dec(int damage = 1)
+    public virtual void Dec(int damage = 1)
     {
         controller.Dec(amount, damage);
         if (amount >= 0) amount -= damage;
+    }
+
+    ~ConcreteUIElementModel()
+    {
+        controller = null;
     }
 }

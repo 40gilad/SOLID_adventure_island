@@ -21,4 +21,7 @@ public class SC_EnemyGhostModel : ConcreteEnemyAnimalModel
         float newX = transform.position.x - moveSpeed * Time.deltaTime;
         transform.position = new Vector2(newX, newY);
     }
+    protected override void PlayerFriendEnemyCollider(bool is_friendAnimal_attacking)
+    { //animal attacks dont kill ghosts
+    }
 }

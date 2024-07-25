@@ -25,8 +25,9 @@ public class SC_EnemyBonefireModel : ConcreteEnemyModel
     {
     }
 
-    protected override void PlayerFriendEnemyCollider()
+    protected override void PlayerFriendEnemyCollider(bool is_friendAnimal_attacking)
     {
         controller.Died();
     }
+
 }

@@ -35,6 +35,7 @@ public class SC_PlayerController : SC_PlayerMovement
             UiLives = tempController.model;
         collider_manager = new SC_PlayerCollisionManager(UiPower, UiLives,jump);
         initial_position = transform.position;
+        weapon_manager= GetComponent<SC_PlayerWeaponsManager>();
     }
 
     public override void Move()

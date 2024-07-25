@@ -23,10 +23,11 @@ public class SC_EnemyRockModel : ConcreteEnemyModel
 
     protected override void FireBallCollider()
     {
-        Debug.Log("Fireball touch Rock");
+        controller.Died();
     }
 
-    protected override void PlayerFriendEnemyCollider()
+    protected override void PlayerFriendEnemyCollider(bool is_friendAnimal_attacking)
     {
+        controller.Died();
     }
 }

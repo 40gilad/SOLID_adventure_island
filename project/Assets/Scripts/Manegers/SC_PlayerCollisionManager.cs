@@ -57,12 +57,17 @@ public class SC_PlayerCollisionManager
             }
             await CollisionCooldown();
         }
+
+        else if (other.gameObject.CompareTag("Depth"))
+            LivesEnemyCollide();
+
         else if (other.gameObject.CompareTag("WeaponFireBall"))
         {
             int damage = other.gameObject.GetComponent<ConcreteWeaponController>().damage;
             UiLives.Dec(damage);
             await CollisionCooldown();
         }
+
     }
 
 
