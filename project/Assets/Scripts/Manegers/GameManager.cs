@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     {
         InitFactoriesDict();
         InitFactories();
+        InitPositions();
+
     }
 
     private void InitFactoriesDict()
@@ -52,6 +54,10 @@ public class GameManager : MonoBehaviour
             kvp.Value.Initialize(prefabManager);
     }
 
+    private void InitPositions()
+    {
+
+    }
     public void GameOver()
     {
         StartCoroutine(ShowGameOverScreen());
