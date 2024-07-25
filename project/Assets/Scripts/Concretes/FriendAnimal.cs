@@ -14,7 +14,6 @@ public abstract class FriendAnimal : MonoBehaviour
 
     void Awake()
     {
-        Invoke("DestroySelf", destroyTime);
         player_weapon_manager = GameObject.FindGameObjectWithTag("Player")
             .GetComponent<SC_PlayerWeaponsManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -59,5 +58,8 @@ public abstract class FriendAnimal : MonoBehaviour
     }
 
     public abstract void Attack();
-    protected abstract void CombineWithPlayer();
+    public void CombineWithPlayer()
+    {
+        Invoke("DestroySelf", destroyTime);
+    }
 }

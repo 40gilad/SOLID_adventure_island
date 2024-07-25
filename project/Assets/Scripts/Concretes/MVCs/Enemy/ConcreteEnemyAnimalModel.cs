@@ -5,11 +5,6 @@ public class ConcreteEnemyAnimalModel : ConcreteEnemyModel
 {
     protected Transform playerTransform;
 
-    public override void PlayerCollider(Collider2D other)
-    {
-        Debug.Log("Player touch animal. player lives dec");
-    }
-
     protected override void BoomerangCollider()
     {
         Debug.Log(this.GetType().Name+" "+ System.Reflection.MethodBase.GetCurrentMethod().Name);

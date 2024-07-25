@@ -14,8 +14,4 @@ public class RedFriendAnimal : FriendAnimal
         float direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.x;
         fireball_weapon.FireShoot(direction,name);
     }
-
-    protected override void CombineWithPlayer()
-    {
-    }
 }

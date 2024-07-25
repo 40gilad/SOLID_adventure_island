@@ -30,12 +30,11 @@ public class Cards_FriendsAnimalsManaeger : MonoBehaviour
         if (prefab_name == null)
             throw new ArgumentException(color);
         SwitchAnimals();
-
         curr_active_animal = PoolManager.Instance.GetObjectFromPool(prefab_name);
         curr_active_animal.transform.SetParent(player.transform, false);
         curr_active_animal.transform.localPosition = new Vector3(0.2f, -0.7f,1f);
+        curr_active_animal.GetComponent<FriendAnimal>().CombineWithPlayer();
         player_weapon_manager.SetFriendAnimalColor(color);
-
 
     }
 

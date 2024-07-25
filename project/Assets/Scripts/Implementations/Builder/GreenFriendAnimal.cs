@@ -12,8 +12,4 @@ public class GreenFriendAnimal : FriendAnimal
 
     }
 
-    protected override void CombineWithPlayer()
-    {
-        Debug.Log("Player is now riding Blue Animal");
-    }
 }
