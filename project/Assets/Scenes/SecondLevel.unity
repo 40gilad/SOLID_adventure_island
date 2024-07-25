@@ -2486,7 +2486,7 @@ MonoBehaviour:
   FireBallWeaponPrefab: {fileID: 2622351116122189604, guid: 01ea80aa78d436147a9366a108e1e21c, type: 3}
   PlayerFireBallWeaponPrefab: {fileID: 2622351116122189604, guid: 97676b65c9c26684fa10f0ee663a5188, type: 3}
   RockEnemyPrefab: {fileID: 4216082170968968743, guid: 1a76a0c99f33d004aa28708c41eda3b7, type: 3}
-  BonfireEnemyPrefab: {fileID: 0}
+  BonfireEnemyPrefab: {fileID: 4216082170968968743, guid: c0e3e529b2826094d9f9cf0fa5b68f41, type: 3}
   SnakeEnemyPrefab: {fileID: 4216082170968968743, guid: e161951b9b68dc04886ac58ed76220ad, type: 3}
   FrogEnemyPrefab: {fileID: 4216082170968968743, guid: 1fbbde07fca256b4b94ce80254287020, type: 3}
   SpiderEnemyPrefab: {fileID: 4216082170968968743, guid: 51eaf73125d5eaf48993f2c6d11d4b7c, type: 3}

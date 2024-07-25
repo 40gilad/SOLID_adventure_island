@@ -36,7 +36,7 @@ public class EnemiesFactory : Factory
         }
 
         if (prefab == null)
-            throw new ArgumentException("Prefab not found");
+            throw new ArgumentException(type+" Prefab not found");
         return GameObject.Instantiate(prefab).GetComponent<ConcreteEnemyController>();
     }
 }
