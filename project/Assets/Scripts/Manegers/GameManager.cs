@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject game_over_panel;
+    public GameObject victory_panel;
     private List<string> levels;
     public SC_ColAndEnemiesPositions sc_ColAndEnemiesPositions;
 
@@ -70,8 +71,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("All levels finished! Restarting...");
-            SceneManager.LoadScene(levels[0]);
+            Debug.Log("All levels finished!");
+            victory_panel.SetActive(true);
+
         }
     }
 
@@ -82,4 +84,5 @@ public class GameManager : MonoBehaviour
         game_over_panel.SetActive(false);
         SceneManager.LoadScene(levels[0]);
     }
+
 }
