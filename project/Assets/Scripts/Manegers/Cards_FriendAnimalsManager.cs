@@ -17,6 +17,7 @@ public class Cards_FriendsAnimalsManaeger : MonoBehaviour
             {"Red", "Prefab_RedDino"},
             {"Blue", "Prefab_BlueDino"},
             {"Green", "Prefab_GreenDino"},
+            {"Fairy" ,"Prefab_Fairy"}
         };
         player = GameObject.FindGameObjectWithTag("Player");
         player_weapon_manager = player.GetComponent<SC_PlayerWeaponsManager>();
@@ -32,7 +33,10 @@ public class Cards_FriendsAnimalsManaeger : MonoBehaviour
         SwitchAnimals();
         curr_active_animal = PoolManager.Instance.GetObjectFromPool(prefab_name);
         curr_active_animal.transform.SetParent(player.transform, false);
-        curr_active_animal.transform.localPosition = new Vector3(0.2f, -0.7f,1f);
+        if (color == "Fairy")
+            curr_active_animal.transform.localPosition = new Vector3(-1.5f, 1f, 0f);
+        else
+            curr_active_animal.transform.localPosition = new Vector3(0.2f, -0.7f,1f);
         curr_active_animal.GetComponent<FriendAnimal>().CombineWithPlayer();
         player_weapon_manager.SetFriendAnimalColor(color);
 
@@ -43,6 +47,7 @@ public class Cards_FriendsAnimalsManaeger : MonoBehaviour
         if (curr_active_animal == null)
             return;
         curr_active_animal.GetComponent<FriendAnimal>().GoToSleep();
+        curr_active_animal = null;
     }
 
     public string GetPrefabName(string color)

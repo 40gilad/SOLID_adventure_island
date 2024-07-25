@@ -704,6 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabManager: {fileID: 1392437424}
+  max_object_amount: 10
 --- !u!1 &297955970
 GameObject:
   m_ObjectHideFlags: 0

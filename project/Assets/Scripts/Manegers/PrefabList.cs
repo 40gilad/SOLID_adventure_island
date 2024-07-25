@@ -7,8 +7,8 @@ public class PrefabList
     private PrefabList()
     {
         prefab_list = new List<string> {
-           /* "Col_Boomerang",
-            "Col_Hammer",*/
+            "Col_Boomerang",
+            "Col_Hammer",
             "Prefab_HeartCard",
             "Prefab_LeafCard",
             "Prefab_StarCard",

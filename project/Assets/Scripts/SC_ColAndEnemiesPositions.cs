@@ -10,6 +10,7 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
     private List<string> fruits_objects;
     List<float> currgrondXYpos;
     public PrefabManager prefabManager;
+    public int max_object_amount = 20;
     int x=0, y=1;
 
     private Dictionary<string, Factory> factories;
@@ -24,7 +25,7 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
     }
     public void PlaceObjects()
     {
-        int objects_amount = 20;
+        int objects_amount = max_object_amount;
 
         while (--objects_amount!=0)
         {

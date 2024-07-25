@@ -7,14 +7,9 @@ public class FairyFriendAnimal : FriendAnimal
     private string color = "Fairy";
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        player_weapon_manager = player.GetComponent<SC_PlayerWeaponsManager>();
-        transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform);
-        transform.localPosition = new Vector3(-1.5f, 1f, 0f);
-        player_weapon_manager.SetFriendAnimalColor(color);
-
+        GameObject.Find("Cards_FriendAnimalsManager").
+            GetComponent<Cards_FriendsAnimalsManaeger>().SetAnimal("Fairy");
     }
-
 
     public override void Attack()
     {

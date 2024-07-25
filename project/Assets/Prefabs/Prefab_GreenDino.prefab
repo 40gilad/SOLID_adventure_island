@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a5047a03c4b2c4797f309f1ecea418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 30
+  destroyTime: 10
   attackSprite: {fileID: 21300000, guid: 63f050e0b9adad94d9a741f388e08dad, type: 3}
