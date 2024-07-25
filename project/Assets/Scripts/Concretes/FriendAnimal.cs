@@ -19,7 +19,6 @@ public abstract class FriendAnimal : MonoBehaviour
             .GetComponent<SC_PlayerWeaponsManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalSprite = spriteRenderer.sprite;
-
     }
 
     void DestroySelf()

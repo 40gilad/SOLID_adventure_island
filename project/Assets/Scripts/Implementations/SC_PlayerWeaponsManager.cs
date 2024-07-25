@@ -15,16 +15,16 @@ public class SC_PlayerWeaponsManager : MonoBehaviour
     {
         curr = null;
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             curr = boomerang_weapon;
         }
-        else if (Input.GetKeyDown(KeyCode.H))
+        else if (Input.GetKeyDown(KeyCode.Z))
         {
             curr = hammer_weapon;
         }
 
-        else if (Input.GetKeyDown(KeyCode.G)
+        else if (Input.GetKeyDown(KeyCode.C)
             && !string.IsNullOrEmpty(friendAnimal_color))
         {
             try

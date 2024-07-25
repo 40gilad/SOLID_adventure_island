@@ -15,11 +15,6 @@ public class FairyFriendAnimal : FriendAnimal
 
     }
 
-    private void OnDisable()
-    {
-        player_weapon_manager.SetFriendAnimalColor(string.Empty);
-
-    }
 
     public override void Attack()
     {
