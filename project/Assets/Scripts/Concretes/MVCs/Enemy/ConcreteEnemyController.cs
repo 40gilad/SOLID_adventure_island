@@ -34,22 +34,12 @@ public abstract class ConcreteEnemyController: MonoBehaviour
 
     private void LayEgg()
     {
-        bool to_lay_an_egg = FlipCoin();
+        bool to_lay_an_egg = Lottery.Instance().FlipCoin();
         if (!to_lay_an_egg)
             return;
         GameObject egg =PoolManager.Instance.GetObjectFromPool("Prefab_Egg");
         egg.SetActive(true);
         egg.transform.position = new Vector3(this.transform.position.x, 0.9f, -1f);
-    }
-
-    public bool FlipCoin()
-    {
-        return (random.Next(0, 2) == 0);
-    }
-
-    public bool OutOfThree()
-    {
-        return (random.Next(0, 3) == 2);
     }
 
 

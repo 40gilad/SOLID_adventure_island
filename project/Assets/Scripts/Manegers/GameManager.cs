@@ -5,22 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public PrefabManager prefabManager;
-    private Dictionary<string, Factory> factories;
     public GameObject game_over_panel;
     private List<string> levels;
-
+    public SC_ColAndEnemiesPositions sc_ColAndEnemiesPositions;
 
 
     void Start()
     {
         Init();
-        ConcreteCollectible pineapple = factories["Fruits"].CreateCollectible("Pineapple");
-        pineapple.transform.position = new Vector3(-3, 1.5f, 0);
-        ConcreteCollectible grape = factories["Fruits"].CreateCollectible("Grape");
-        grape.transform.position = new Vector3(15, 1.5f, 0);
-        ConcreteEnemyController spider = factories["Enemies"].CreateEnemy("Spider");
-        spider.transform.position = new Vector3(15, 1.5f, 0);
 
     }
     private void OnEnable()
@@ -38,32 +30,14 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
-        InitFactoriesDict();
-        InitFactories();
         InitPositions();
         InitLevels();
     }
 
-    private void InitFactoriesDict()
-    {
-
-        factories = new Dictionary<string, Factory>()
-        {
-            { "Fruits",new FruitsFactory() },
-            { "Weapons",new WeaponsFactory() },
-            { "Enemies",new EnemiesFactory() }
-        };
-    }
-
-    private void InitFactories()
-    {
-        foreach (KeyValuePair<string, Factory> kvp in factories)
-            kvp.Value.Initialize(prefabManager);
-    }
 
     private void InitPositions()
     {
-        Debug.Log("Init fruits and enemies positions");
+        sc_ColAndEnemiesPositions.PlaceObjects();
     }
 
     private void InitLevels()
