@@ -16,6 +16,7 @@ TagManager:
   - PlayerWeaponFireball
   - Depth
   - Cave
+  - WeaponPlayerFireball
   layers:
   - Default
   - TransparentFX
