@@ -19,6 +19,8 @@ public class SC_PlayerController : SC_PlayerMovement
     private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
     private Vector3 initial_position;
     public static event Action GameOver;
+    public static event Action PlayerCaveCollision;
+
 
 
     private void Start()
@@ -57,6 +59,7 @@ public class SC_PlayerController : SC_PlayerMovement
         SC_PlayerCollisionManager.GoToStart += GoToStart;
         SC_PlayerCollisionManager.CoolDownStart += StartCoolDown;
         SC_PlayerCollisionManager.CoolDownEnd += EndCoolDown;
+        SC_PlayerCollisionManager.PlayerCollideCave += PlayerCollideCave;
     }
 
 
@@ -65,6 +68,7 @@ public class SC_PlayerController : SC_PlayerMovement
         SC_PlayerCollisionManager.GoToStart -= GoToStart;
         SC_PlayerCollisionManager.CoolDownStart -= StartCoolDown;
         SC_PlayerCollisionManager.CoolDownEnd -= EndCoolDown;
+        SC_PlayerCollisionManager.PlayerCollideCave -= PlayerCollideCave;
         cancellationTokenSource.Cancel();
 
     }
@@ -108,5 +112,10 @@ public class SC_PlayerController : SC_PlayerMovement
             return;
         }
         transform.position = initial_position;
+    }
+
+    private void PlayerCollideCave()
+    {
+        PlayerCaveCollision?.Invoke();
     }
 }

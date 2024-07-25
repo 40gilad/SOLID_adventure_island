@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemiesFactory : Factory
 {
+    /*
     public override ConcreteEnemyController CreateCollectible(string type)
     {
         base.CreateCollectible(null); //make sure that factory was initialize
@@ -25,4 +26,5 @@ public class EnemiesFactory : Factory
 
         return GameObject.Instantiate(prefab).GetComponent<ConcreteEnemyController>();
     }
+    */
 }

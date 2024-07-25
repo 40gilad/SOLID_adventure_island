@@ -13,6 +13,7 @@ public class SC_PlayerCollisionManager
     private float cooldownTime = 2f;
     public static event Action CoolDownStart;
     public static event Action CoolDownEnd;
+    public static event Action PlayerCollideCave;
     public static event Action<int> GoToStart;
 
 
@@ -45,8 +46,8 @@ public class SC_PlayerCollisionManager
                 return;
             else if (is_animal_attacking)
                 return;
-                switch (tag)
-            {                    
+            switch (tag)
+            {
                 case "EnemyPower":
                     PowerEnemyCollide(damage);
                     break;
@@ -68,6 +69,9 @@ public class SC_PlayerCollisionManager
             await CollisionCooldown();
         }
 
+        else if (other.gameObject.CompareTag("Cave"))
+            CaveCollide();
+
     }
 
 
@@ -87,6 +91,12 @@ public class SC_PlayerCollisionManager
 
     }
 
+    private void CaveCollide()
+    {
+        Debug.Log("Player Collide in cave");
+        PlayerCollideCave?.Invoke();
+    }
+
     private void LivesEnemyCollide(int damage = 1)
     {
         UiLives.Dec(damage);
@@ -101,6 +111,7 @@ public class SC_PlayerCollisionManager
         CoolDownEnd?.Invoke();
         isCooldown = false;
     }
+
 
 
 }

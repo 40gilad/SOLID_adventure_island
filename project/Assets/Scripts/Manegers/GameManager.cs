@@ -22,11 +22,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         SC_PlayerController.GameOver += GameOver;
+        SC_PlayerController.PlayerCaveCollision += FinishedLevel;
     }
 
     private void OnDisable()
     {
         SC_PlayerController.GameOver -= GameOver;
+        SC_PlayerController.PlayerCaveCollision -= FinishedLevel;
 
     }
 
@@ -63,6 +65,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowGameOverScreen());
     }
 
+    private void FinishedLevel()
+    {
+        Debug.Log("Finished Level");
+    }
     private IEnumerator ShowGameOverScreen()
     {
         game_over_panel.SetActive(true);
