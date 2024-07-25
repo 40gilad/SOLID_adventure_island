@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7273770474932000252}
   m_Layer: 0
   m_Name: Prefab_PlayerFireBallWeapon
-  m_TagString: PlayerWeaponFireball
+  m_TagString: WeaponPlayerFireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

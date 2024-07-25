@@ -18,7 +18,7 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
             BoomerangCollider();
         else if (other.gameObject.tag == "WeaponHammer")
             HammerCollider();
-        else if (other.gameObject.tag == "PlayerWeaponFireBall")
+        else if (other.gameObject.tag == "WeaponPlayerFireball")
             PlayerFireBallCollider();
     }
 

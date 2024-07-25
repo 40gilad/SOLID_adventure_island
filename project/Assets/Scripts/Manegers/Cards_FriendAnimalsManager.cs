@@ -27,6 +27,8 @@ public class Cards_FriendsAnimalsManaeger : MonoBehaviour
 
     public void SetAnimal(string color)
     {
+        if (color == "Fairy")
+            Debug.Log("aa");
         string prefab_name = GetPrefabName(color);
         if (prefab_name == null)
             throw new ArgumentException(color);
@@ -36,7 +38,7 @@ public class Cards_FriendsAnimalsManaeger : MonoBehaviour
         if (color == "Fairy")
             curr_active_animal.transform.localPosition = new Vector3(-1.5f, 1f, 0f);
         else
-            curr_active_animal.transform.localPosition = new Vector3(0.2f, -0.7f,1f);
+            curr_active_animal.transform.localPosition = new Vector3(0.2f, -0.5f,1f);
         curr_active_animal.GetComponent<FriendAnimal>().CombineWithPlayer();
         player_weapon_manager.SetFriendAnimalColor(color);
 

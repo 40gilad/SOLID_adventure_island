@@ -34,7 +34,7 @@ public abstract class ConcreteEnemyController: MonoBehaviour
 
     private void LayEgg()
     {
-        bool to_lay_an_egg = Lottery.Instance().FlipCoin();
+        bool to_lay_an_egg = Lottery.Instance().TwoOutOfThree();// 2/3 odd to lay egg
         if (!to_lay_an_egg)
             return;
         GameObject egg =PoolManager.Instance.GetObjectFromPool("Prefab_Egg");

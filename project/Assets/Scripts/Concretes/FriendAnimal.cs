@@ -27,7 +27,7 @@ public abstract class FriendAnimal : MonoBehaviour
     }
 
     public void GoToSleep()
-    {
+     {
         DestroySelf();
     }
 
