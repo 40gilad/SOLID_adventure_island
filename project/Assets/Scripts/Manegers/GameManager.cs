@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public PrefabManager prefabManager;
     private Dictionary<string, Factory> factories;
     public GameObject game_over_panel;
+    private List<string> levels;
+
 
 
     void Start()
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
         InitFactoriesDict();
         InitFactories();
         InitPositions();
+        InitLevels();
 
     }
 
@@ -58,7 +61,15 @@ public class GameManager : MonoBehaviour
 
     private void InitPositions()
     {
+        Debug.Log("Init fruits and enemies positions");
+    }
 
+    private void InitLevels()
+    {
+        levels = new List<string> {
+            "FirstLevel",
+            "SecondLevel"
+        };
     }
     public void GameOver()
     {
@@ -68,12 +79,31 @@ public class GameManager : MonoBehaviour
     private void FinishedLevel()
     {
         Debug.Log("Finished Level");
+        LoadNextLevel();
+
     }
+
+    private void LoadNextLevel()
+    {
+        int scene_to_load_index = levels.IndexOf(SceneManager.GetActiveScene().name);
+        ++scene_to_load_index;
+
+        if (scene_to_load_index < levels.Count)
+        {
+            SceneManager.LoadScene(levels[scene_to_load_index]);
+        }
+        else
+        {
+            Debug.Log("All levels finished! Restarting...");
+            SceneManager.LoadScene(levels[0]);
+        }
+    }
+
     private IEnumerator ShowGameOverScreen()
     {
         game_over_panel.SetActive(true);
         yield return new WaitForSeconds(3);
         game_over_panel.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(levels[0]);
     }
 }
