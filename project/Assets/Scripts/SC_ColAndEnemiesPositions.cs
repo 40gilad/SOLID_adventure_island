@@ -7,13 +7,16 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
     private List<GameObject> groundObjects;
     private List<string> enemies_objects;
     private List<string> fruits_objects;
+    List<float> currgrondXYpos;
     public PrefabManager prefabManager;
+    int x=0, y=1;
 
     private Dictionary<string, Factory> factories;
 
 
     private void Start()
     {
+
         InitLists();
         InitFactories();
         GetAllGrounds();
@@ -26,19 +29,21 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
         {
             if (!Lottery.Instance().TwoOutOfThree())// 2/3 to place an object
                 continue;
-            float x_pos = GetGroundX();
+            SetGroundXY();
             ConcreteCollectible fruit = null;
             ConcreteEnemyController enemy = null;
             bool to_place_fruit = Lottery.Instance().TwoOutOfThree();
             if (to_place_fruit) // 2/3 for fruit object
             {
                 fruit = GetFruit();
-                fruit.transform.position = new Vector3(x_pos, 1.5f, 0);
+                float temp_y = fruit.transform.position.y;
+                fruit.transform.position = new Vector3(currgrondXYpos[x], currgrondXYpos[y] + temp_y, 0);
             }
             else // 1/3 for enemy object
             {
                 enemy = GetEnemy();
-                enemy.transform.position = new Vector3(x_pos, 1.5f, 0);
+                float temp_y = enemy.transform.position.y;
+                enemy.transform.position = new Vector3(currgrondXYpos[x], currgrondXYpos[y] + temp_y, 0);
             }
 
         }
@@ -47,8 +52,8 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
     }
     private ConcreteEnemyController GetEnemy()
     {
-        int indx = Lottery.Instance().JustRand(enemies_objects.Count);
-        return factories["Enemies"].CreateEnemy(enemies_objects[indx]);
+            int indx = Lottery.Instance().JustRand(enemies_objects.Count);
+            return factories["Enemies"].CreateEnemy(enemies_objects[indx]);
     }
     private ConcreteCollectible GetFruit()
     {
@@ -64,15 +69,18 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
         groundObjects.AddRange(grounds);
     }
 
-    private float GetGroundX()
+    private void SetGroundXY()
     {
-        int indx = Lottery.Instance().JustRand(groundObjects.Count);
-        return groundObjects[indx].transform.position.x;
+            int indx = Lottery.Instance().JustRand(groundObjects.Count);
+            currgrondXYpos[x] = groundObjects[indx].transform.position.x;
+            currgrondXYpos[y] = groundObjects[indx].transform.position.y;
         //groundObjects.Remove(curr_ground);
     }
 
     private void InitLists()
     {
+        currgrondXYpos = new List<float> { 0, 0 };
+
         fruits_objects = new List<string>()
         {
             "Pineapple",
