@@ -9,7 +9,7 @@ public class SC_PlayerWeaponsManager : MonoBehaviour
     private ConcreteWeaponController curr;
     private string friendAnimal_color;
     public bool is_animal_attacking;
-    private List<string> sprtie_changers_animals = new List<string> { "Blue", "Green" };
+    private List<string> sprtie_changers_animals = new List<string> { "Blue", "Green","Red","Fairy" };
 
     void Update()
     {

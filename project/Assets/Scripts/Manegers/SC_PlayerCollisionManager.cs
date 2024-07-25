@@ -35,7 +35,16 @@ public class SC_PlayerCollisionManager
 
     public async void HandleCollision(Collider2D other,bool is_animal_attacking,string animal_color)
     {
-        if (isCooldown) return; // Ignore collisions if in cooldown
+        if (other.gameObject.CompareTag("Depth"))
+            LivesEnemyCollide();
+
+        else if (other.gameObject.CompareTag("Cave"))
+            CaveCollide();
+
+        else if (isCooldown) return; // Ignore collisions if in cooldown
+
+        else if (animal_color == "Fairy")
+            return;
 
         if (other.gameObject.tag.StartsWith("Enemy"))
         {
@@ -59,18 +68,13 @@ public class SC_PlayerCollisionManager
             await CollisionCooldown();
         }
 
-        else if (other.gameObject.CompareTag("Depth"))
-            LivesEnemyCollide();
-
+        
         else if (other.gameObject.CompareTag("WeaponFireBall"))
         {
-            int damage = other.gameObject.GetComponent<ConcreteWeaponController>().damage;
+                int damage = other.gameObject.GetComponent<ConcreteWeaponController>().damage;
             UiLives.Dec(damage);
             await CollisionCooldown();
         }
-
-        else if (other.gameObject.CompareTag("Cave"))
-            CaveCollide();
 
     }
 

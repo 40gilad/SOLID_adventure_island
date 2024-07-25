@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4064188304216951957}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 90}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7599060312eb17445b938a0f9d05b34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UiElementName: TM_Boomerang
+  UiElementName: TM_Hammer

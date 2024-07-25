@@ -2,12 +2,17 @@ using UnityEngine;
 
 public class SC_EnemySnakeWeaponManager : MonoBehaviour
 {
-    public SC_FireBallWeapon fireball;
+    private SC_FireBallWeapon fireball;
     private float shotInterval = 1.0f;
     private float nextShotTime = 0f;
     public float shootDistance = 5.0f;
 
 
+    private void Start()
+    {
+        fireball = GameObject.Find("SC_FireBallWeapon").GetComponent<SC_FireBallWeapon>();
+
+    }
     void Update()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
