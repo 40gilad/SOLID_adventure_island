@@ -15,6 +15,7 @@ TagManager:
   - GameOverPanel
   - PlayerWeaponFireball
   - Depth
+  - Cave
   layers:
   - Default
   - TransparentFX
