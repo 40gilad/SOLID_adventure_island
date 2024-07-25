@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
         pineapple.transform.position = new Vector3(-3, 1.5f, 0);
         ConcreteCollectible grape = factories["Fruits"].CreateCollectible("Grape");
         grape.transform.position = new Vector3(15, 1.5f, 0);
+        ConcreteEnemyController spider = factories["Enemies"].CreateEnemy("Spider");
+        spider.transform.position = new Vector3(15, 1.5f, 0);
 
     }
     private void OnEnable()
@@ -40,7 +42,6 @@ public class GameManager : MonoBehaviour
         InitFactories();
         InitPositions();
         InitLevels();
-
     }
 
     private void InitFactoriesDict()
@@ -49,7 +50,8 @@ public class GameManager : MonoBehaviour
         factories = new Dictionary<string, Factory>()
         {
             { "Fruits",new FruitsFactory() },
-            { "Weapons",new WeaponsFactory() }
+            { "Weapons",new WeaponsFactory() },
+            { "Enemies",new EnemiesFactory() }
         };
     }
 

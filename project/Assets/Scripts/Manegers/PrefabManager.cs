@@ -32,6 +32,7 @@ public class PrefabManager : MonoBehaviour
 
     #region Enemies
     public GameObject RockEnemyPrefab;
+    public GameObject BonfireEnemyPrefab;
     public GameObject SnakeEnemyPrefab;
     public GameObject FrogEnemyPrefab;
     public GameObject SpiderEnemyPrefab;
@@ -73,5 +74,7 @@ public class PrefabManager : MonoBehaviour
         PoolManager.Instance.CreatePool(LeafCardPrefab, 1);
         PoolManager.Instance.CreatePool(StarCardPrefab, 1);
         PoolManager.Instance.CreatePool(HeartCardPrefab, 1);
+
     }
+
 }
