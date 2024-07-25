@@ -118,10 +118,4 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
         foreach (KeyValuePair<string, Factory> kvp in factories)
             kvp.Value.Initialize(prefabManager);
     }
-    /*
-    ConcreteCollectible grape = factories["Fruits"].CreateCollectible("Grape");
-    grape.transform.position = new Vector3(15, 1.5f, 0);
-    ConcreteEnemyController spider = factories["Enemies"].CreateEnemy("Spider");
-    spider.transform.position = new Vector3(15, 1.5f, 0);
-    */
 }

@@ -1,7 +1,5 @@
 using Assets.Scripts.Implementations;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
