@@ -1,8 +1,9 @@
-# Unity Game Project
-![Game Screenshot](Game_ScreenShot.JPG)
+# Unity Game Project - Advanture Island replica.
+![Game Screenshot](Game_Screenshot.png)
 ## Overview
 
-This is a Unity-based game featuring a player character that interacts with various friendly animals and enemies. The game includes different levels, collectible items, and various mechanics to provide an engaging gameplay experience.
+This is a Unity-based game featuring a player character that interacts with various friendly animals and enemies. The game includes 2 levels, collectible items, and various mechanics to provide an engaging gameplay experience.
+The game implemented using SOLID principles and Design patterns such as factor and builder.
 
 ## How to Play
 
@@ -106,6 +107,9 @@ This is a Unity-based game featuring a player character that interacts with vari
 2. Open the project in Unity.
 3. Ensure all prefabs and assets are correctly set up in the `PrefabManager`.
 4. Play the game in the Unity Editor to test and debug.
+
+## Made By
+- Gilad Meir
 
 ## Contributing
 
