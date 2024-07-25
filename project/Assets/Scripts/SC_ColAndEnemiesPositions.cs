@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
     private Dictionary<string, Factory> factories;
 
 
-    private void Start()
+    private void Awake()
     {
 
         InitLists();
@@ -32,14 +33,14 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
             SetGroundXY();
             ConcreteCollectible fruit = null;
             ConcreteEnemyController enemy = null;
-            bool to_place_fruit = Lottery.Instance().TwoOutOfThree();
-            if (to_place_fruit) // 2/3 for fruit object
+            bool to_place_fruit = Lottery.Instance().FlipCoin();
+            if (to_place_fruit) // 1/2 for fruit object
             {
                 fruit = GetFruit();
                 float temp_y = fruit.transform.position.y;
                 fruit.transform.position = new Vector3(currgrondXYpos[x], currgrondXYpos[y] + temp_y, 0);
             }
-            else // 1/3 for enemy object
+            else // 1/2 for enemy object
             {
                 enemy = GetEnemy();
                 float temp_y = enemy.transform.position.y;
@@ -74,6 +75,7 @@ public class SC_ColAndEnemiesPositions : MonoBehaviour
             int indx = Lottery.Instance().JustRand(groundObjects.Count);
             currgrondXYpos[x] = groundObjects[indx].transform.position.x;
             currgrondXYpos[y] = groundObjects[indx].transform.position.y;
+        
         //groundObjects.Remove(curr_ground);
     }
 

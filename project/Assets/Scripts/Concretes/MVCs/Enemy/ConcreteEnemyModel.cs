@@ -18,8 +18,8 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
             BoomerangCollider();
         else if (other.gameObject.tag == "WeaponHammer")
             HammerCollider();
-        else if (other.gameObject.tag == "WeaponFireBall")
-            FireBallCollider();
+        else if (other.gameObject.tag == "PlayerWeaponFireBall")
+            PlayerFireBallCollider();
     }
 
 
@@ -36,9 +36,18 @@ public abstract class ConcreteEnemyModel : SC_EnemyMovement
         }
 
     }
-    protected abstract void HammerCollider();
-    protected abstract void BoomerangCollider();
-    protected abstract void FireBallCollider();
+    protected virtual void HammerCollider()
+    {
+        controller.Died();
+    }
+    protected virtual void BoomerangCollider()
+    {
+        controller.Died();
+    }
+    protected virtual void PlayerFireBallCollider()
+    {
+        controller.Died();
+    }
     private void PlayerFairyCollider()
     {
         controller.Died();

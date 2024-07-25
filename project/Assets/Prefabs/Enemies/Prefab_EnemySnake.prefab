@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4038330088788375728}
   m_Layer: 0
   m_Name: Prefab_EnemySnake
-  m_TagString: Untagged
+  m_TagString: EnemyLives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.24, y: 2}
+  m_Size: {x: 1.28, y: 1.45}
   m_EdgeRadius: 0
 --- !u!114 &4773741335891266606
 MonoBehaviour:
@@ -145,8 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  initial_position: {x: 0, y: 0, z: 0}
-  time_of_death: 5
+  revival_time: 5
 --- !u!114 &4038330088788375728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,5 +158,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f3f0825dc29a14589d726bae5973e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireball: {fileID: 0}
   shootDistance: 5

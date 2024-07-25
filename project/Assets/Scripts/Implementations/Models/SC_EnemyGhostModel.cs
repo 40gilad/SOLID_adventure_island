@@ -33,8 +33,9 @@ public class SC_EnemyGhostModel : ConcreteEnemyAnimalModel
     {
     }
 
-    protected override void FireBallCollider()
+    protected override void PlayerFireBallCollider()
     {
 
     }
 }
+

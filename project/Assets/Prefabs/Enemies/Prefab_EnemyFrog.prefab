@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8455007823673584304}
   m_Layer: 0
   m_Name: Prefab_EnemyFrog
-  m_TagString: Untagged
+  m_TagString: EnemyLives
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.24, y: 2}
+  m_Size: {x: 1.41, y: 1.21}
   m_EdgeRadius: 0
 --- !u!114 &8455007823673584304
 MonoBehaviour:

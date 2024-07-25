@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UiElementName: TM_Power
-  effect: 10
+  effect: 2

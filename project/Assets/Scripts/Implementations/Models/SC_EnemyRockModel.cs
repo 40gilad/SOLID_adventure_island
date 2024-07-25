@@ -21,13 +21,11 @@ public class SC_EnemyRockModel : ConcreteEnemyModel
     {
     }
 
-    protected override void FireBallCollider()
+    protected override void PlayerFireBallCollider()
     {
-        controller.Died();
     }
 
     protected override void PlayerFriendEnemyCollider(bool is_friendAnimal_attacking)
     {
-        controller.Died();
     }
 }
