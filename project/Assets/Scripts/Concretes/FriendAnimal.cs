@@ -7,11 +7,18 @@ public abstract class FriendAnimal : MonoBehaviour
     protected SC_PlayerWeaponsManager player_weapon_manager;
 
 
+
+    public Sprite attackSprite;
+    private SpriteRenderer spriteRenderer;
+    private Sprite originalSprite;
+
     void Awake()
     {
         Invoke("DestroySelf", destroyTime);
         player_weapon_manager = GameObject.FindGameObjectWithTag("Player")
             .GetComponent<SC_PlayerWeaponsManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalSprite = spriteRenderer.sprite;
 
     }
 
@@ -34,6 +41,22 @@ public abstract class FriendAnimal : MonoBehaviour
                 DestroySelf();
         }
 
+    }
+
+    protected void ChangeSprite()
+    {
+        if (spriteRenderer != null && attackSprite != null)
+        {
+            spriteRenderer.sprite = attackSprite;
+        }
+    }
+
+    protected void RevertSprite()
+    {
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sprite = originalSprite;
+        }
     }
 
     public abstract void Attack();

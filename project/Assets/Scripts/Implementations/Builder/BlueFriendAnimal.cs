@@ -6,7 +6,8 @@ public class BlueFriendAnimal : FriendAnimal
 
     public override void Attack()
     {
-        Debug.Log("Blue Animal attacks with tail");
+        ChangeSprite();
+        Invoke("RevertSprite", 0.5f);
     }
 
     protected override void CombineWithPlayer()

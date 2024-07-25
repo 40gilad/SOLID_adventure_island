@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 30
+  attackSprite: {fileID: 21300000, guid: 63f050e0b9adad94d9a741f388e08dad, type: 3}

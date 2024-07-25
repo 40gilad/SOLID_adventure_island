@@ -5,7 +5,8 @@ public class GreenFriendAnimal : FriendAnimal
 
     public override void Attack()
     {
-        Debug.Log("Green Animal attacks with turn");
+        ChangeSprite();
+        Invoke("RevertSprite", 0.5f);
     }
 
     protected override void CombineWithPlayer()
