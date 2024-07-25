@@ -11,6 +11,7 @@ public class SC_PlayerController : SC_PlayerMovement
 
     private SC_Jump jump;
     private SC_PlayerCollisionManager collider_manager;
+    private SC_PlayerWeaponsManager weapon_manager;
     public string PowerUiElementName;
     public string LivesUiElementsName;
     private SpriteRenderer spriteRenderer;
@@ -46,7 +47,8 @@ public class SC_PlayerController : SC_PlayerMovement
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        collider_manager.HandleCollision(other);
+        bool is_animal_attacking = weapon_manager.IsAnimalAttacking();
+        collider_manager.HandleCollision(other,is_animal_attacking,weapon_manager.GetColor());
     }
 
     private void OnEnable()

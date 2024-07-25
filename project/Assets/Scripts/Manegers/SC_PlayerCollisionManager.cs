@@ -32,7 +32,7 @@ public class SC_PlayerCollisionManager
     }
 
 
-    public async void HandleCollision(Collider2D other)
+    public async void HandleCollision(Collider2D other,bool is_animal_attacking,string animal_color)
     {
         if (isCooldown) return; // Ignore collisions if in cooldown
 
@@ -40,8 +40,13 @@ public class SC_PlayerCollisionManager
         {
             int damage = other.gameObject.GetComponent<ConcreteEnemyController>().damage;
             string tag = other.gameObject.tag;
-            switch (tag)
-            {
+            if (other.gameObject.name.StartsWith("Prefab_EnemyGhost")
+                && !GhostCollide(animal_color))
+                return;
+            else if (is_animal_attacking)
+                return;
+                switch (tag)
+            {                    
                 case "EnemyPower":
                     PowerEnemyCollide(damage);
                     break;
@@ -68,6 +73,13 @@ public class SC_PlayerCollisionManager
     private void PowerEnemyCollide(int damage = 1)
     {
         UiPower.Dec(damage);
+    }
+    private bool GhostCollide(string animal_color)
+    {
+        if (animal_color == "Fairy")
+            return false;
+        return true;
+
     }
 
     private void LivesEnemyCollide(int damage = 1)
