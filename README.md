@@ -106,7 +106,11 @@ The game implemented using SOLID principles and Design patterns such as factor a
 1. Clone the repository: `git clone <repository-url>`
 2. Open the project in Unity.
 3. Ensure all prefabs and assets are correctly set up in the `PrefabManager`.
-4. Play the game in the Unity Editor to test and debug.
+4. In case of this error: The type or namespace name 'TMPro' could not be found do 5
+5. 'TMPro' could not be found handling: Go to Window > Package Manager in the Unity Editor. In the Package Manager, find and install the "TextMesh Pro" package. If it's not visible, you may need to change the Package Manager view to "Unity Registry" from the top left dropdown menu.
+6. Drag from Assets > Scenes "FirstLevel" and Play the scene.
+7. Play the game in the Unity Editor to test and debug.
+
 
 ## Made By
 - Gilad Meir
