@@ -103,7 +103,7 @@ The game implemented using SOLID principles and Design patterns such as factor a
 
 ## Setup
 
-1. Clone the repository: `git clone <repository-url>`
+1. Clone the repository: `git clone https://github.com/40gilad/SOLID_adventure_island.git`
 2. Open the project in Unity.
 3. Ensure all prefabs and assets are correctly set up in the `PrefabManager`.
 4. In case of this error: The type or namespace name 'TMPro' could not be found do 5
